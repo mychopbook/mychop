@@ -11,7 +11,7 @@
             <div class="col-xs-12 col-sm-6 toplinks"><a href="#link1">Login / Register</a> | <a href="#link1">My Account</a> | <a href="#link1">MyChops</a></div>
 		</div>
 	</div><!-- end container-->
-    </div><!-- end topnav-->
+    </div><!-- end topnavbhbj-->
     
     <div class="mainnav">
 	<div class="container">
