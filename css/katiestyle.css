@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+body {
+	font-family: "Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+	background-image:url(image/backgd/bg1.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+	
+}
+input#input.form-control {
+	margin: 14% 30% 6%;
+	font-style: italic;
+	"Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+	}	 
+
+#page-wrap {
+   width: 80%;
+  margin: 19% auto;
+  padding: 20px;
+  background: white;
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 4px black;
+}
+	
+	
+
+.form-control {
+  display: block;
+  width: 20%;
+  margin: auto;
+  height: 42px;
+  padding: 0px 115px;
+  font-size: 15px;
+  line-height: 1.428571;
+  color: #E50F1F;
+  background-color: #FCF2EA;
+  background-image: none;
+  border: 1px solid #F0AD4E;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.btn.btn-warning {
+	font-family: "Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+	font-size: medium;
+}
+.btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+  border-radius: 4px;
+  width: 12%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.buttn {
+	text-align: center;
+}
+
+
+
+
+#food{
+  font-size: 35px; 
+  color: rgb(255, 136, 36);
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+ line-height: 13.2;
+  
+}
+.food_Cate {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Gill Sans";
+  color: rgb(255, 164, 82);
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 339.234px;
+  top: 669.494px;
+  
+}
+
+
+img-thumbnail {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+	padding: 4px;
+	line-height: 1.42857143;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out
+}
+img{
+	width: 457px;
+    height: 117px;
+  	margin: -99px 7px 7px 30%; 
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
+	
+	}
+        
+
+.holidays_lg {
+	font-size: 18px;
+	font-family: "Gill Sans";
+	color: rgb(255, 164, 82);
+	/* font-weight: bold; */
+	line-height: 1.2;
+	/* text-align: center; */
+	position: absolute;
+}
+
+ul li a { 
+padding: .2em 1em;
+text-decoration: none;
+
+
+}
+a{
+	color: rgba(0,0,0,1.00);
+	}
+ul.list-inline-1,.list-inline-2,.list-inline-3,.list-inline-4  {
+list-style-type: none;
+  margin: auto;
+  padding: 31px;
+  text-align: center;
+}
+.list-inline-1{
+	display: inline-block;
+	
+	}
+.list-inline-2{
+	display: inline-block;
+	}
+.list-inline-3{
+	display: inline-block;
+	}
+.list-inline-4{
+	display: inline-block;
+	}
+	h3{
+		color: rgb(255, 164, 82);
+		}
+	
+		<!--- category page ends ---->
+
+ .mainlinks > a {
+ color: hsl(0, 0%, 0%);
+ display: inline-block;
+ font-size: 15px;
+ font-weight: bold;
+ padding: 45px 15px 0 0;
+	left: 397px;
+	top: 646px;
+ 
+}
+footer {
+	background: #fbf9f5;
+	padding: 20px 0;
+}
+footer ul {
+	padding: 0;
+}
+footer li {
+	list-style: none;
+}
+footer li a {
+	color: #000;
+}
+
+@media screen and (max-width:767px) {
+.toplinks {
+	text-align: left;
+}
+.topsearchbar {
+	float: left;
+}
+}
+-footer ends --
