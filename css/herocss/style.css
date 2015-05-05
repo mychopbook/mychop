@@ -1,0 +1,190 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+body{
+	font-family:Lato;
+}
+
+/*start header footer css*/
+
+.topnav {
+	padding:5px 0;
+}
+
+.topnav img {
+	padding:0 5px;
+}
+
+.topnav a {
+	color:rgba(255,121,0,1);
+}
+
+.toplinks {
+	text-align:right;
+}
+
+.mainnav {
+	background:url('.../images/headerbg.jpg')  no-repeat center rgba(255,121,0,.7);
+	min-height:150px;
+	padding:20px 0 0;
+}
+
+.topsearchbar {
+	padding-top:35px;
+}
+
+.topsearchinput {
+	background:#fff;
+	border:1px solid rgba(255,121,0,1);
+	height:30px;
+	width:70%;
+	border-radius:4px;
+	float:right;
+	padding-left: 10px;
+}
+
+.headerlogo {
+	text-align:center;
+}
+
+.mainlinks > a {
+	color: hsl(0, 0%, 0%);
+	display: inline-block;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 45px 15px 0 0;
+}
+
+footer {
+	background:#fbf9f5;
+	padding:20px 0;
+    margin-top:80px;
+}
+
+footer ul {
+	padding:0;
+}
+
+footer li {
+	list-style:none;
+}
+
+footer li a {
+	color:#000;
+}
+
+
+/*end header footer css*/
+
+.hero{
+	background-image: url(".../images/hero.jpg") ;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+
+}
+
+.hero-content{
+	width:300px;
+	margin: 0 auto;
+	padding:124px 0px 6px 0px;
+	margin-bottom:60px;
+}
+
+.btn-red{
+	color:#fff;
+	background-color: #ff3608;
+	background-image: none;
+	border: none;
+}
+
+.hero-content .btn-create{
+	display: block;
+	margin:20px auto !important;
+	color:#fff;
+	background-color: #ff3608;
+	background-image: none;
+	border: none;
+}
+
+.row{
+	margin-left:0px;
+	margin-right:0px;
+}
+
+.tab{
+	width: 50%;
+	padding: 10px 0px;
+	text-align: center;
+	border-bottom: 1px solid #ffaf66;
+	border-left: 1px solid #ffaf66;
+	margin:0px;
+	float:left;
+	color: white;
+	background-color: #ff9b00;
+	text-decoration: none;
+	font-family: 'lato';
+	font-weight: 700;
+}
+
+.tab:hover{
+	text-decoration: none;
+	background-color:#ffaf66 ;
+	color:#ffffff;
+}
+
+
+.ninesixty_container{
+	width: 960px;
+	margin:0 auto;
+}
+
+.top_new{
+	text-align: center;
+	margin-top: 80px;
+    overflow:hidden;
+}
+
+.top_new h3{
+	color:#ff3608;
+	font-family: 'lato';
+	font-weight: 700;
+}
+
+.top_new a{
+	color:#000;
+	text-decoration: none;
+	font-family: 'lato';
+	font-weight: 300;
+}
+
+.rating{
+	background-image: url(".../images/knife_rating-icon.png");
+	width: 144px;
+	height: 37px;
+	display: block;
+	margin: 10px auto;
+	border:none;
+}
+
+form h3{
+	border-bottom:1px solid black;
+	color:#ff9b00;
+	padding-bottom:10px;
+}
+
+.form-control{
+	border:1px solid #ff9b00;
+}
+
+
+
+
+
+@media screen and (max-width:767px) {
+.toplinks {
+	text-align:left;
+}
+.topsearchbar {
+	float:left;
+}
+}
