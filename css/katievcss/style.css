@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* CSS Document */
+
+}
+body {
+	font-family:"Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;	
+}
+.topnav {
+	padding:5px 0;
+}
+
+.topnav img {
+	padding:0 5px;
+}
+
+.topnav a {
+	color:rgba(255,121,0,1);
+}
+
+.toplinks {
+	text-align:right;
+}
+
+.mainnav {
+	background:url(headerbg.jpg)  no-repeat center rgba(255,121,0,.7);
+	min-height:150px;
+	padding:20px 0 0;
+}
+
+.topsearchbar {
+	padding-top:35px;
+}
+
+.topsearchinput {
+	background:#fff;
+	border:1px solid rgba(255,121,0,1);
+	height:30px;
+	width:70%;
+	border-radius:4px;
+	float:right;
+	padding-left: 10px;
+}
+
+.headerlogo {
+	text-align:center;
+}
+
+.mainlinks > a {
+    color: hsl(0, 0%, 0%);
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 45px 15px 0 0;
+}
+
+footer {
+	background: #fbf9f5;
+    /* padding: 1488px 0; */
+    /* margin: 1415px 6px; */
+       bottom: -1432px;
+       position: relative;
+}
+
+footer ul {
+	padding:0;
+}
+
+footer li {
+	list-style:none;	
+}
+
+footer li a {
+	color:#000;
+}
+
+@media screen and (max-width:767px) {
+.toplinks {
+	text-align:left;
+}
+.topsearchbar {
+	float:left;
+}
+}
