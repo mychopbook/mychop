@@ -16,7 +16,7 @@
         <ul>
         <li><a href="#link1">About Us</a>
         <li><a href="#link1">Our Team</a>
-        <li><a href="#link1">Contact Us</a>
+        <li><a href="contact.php">Contact Us</a>
         <li><a href="#link1">Privacy Policy</a>
         </ul>
         </div>
