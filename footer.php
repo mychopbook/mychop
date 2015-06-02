@@ -14,7 +14,7 @@
         <div class="col-xs-12 col-sm-3">
         <h4>Company</h4>
         <ul>
-        <li><a href="#link1">About Us</a>
+        <li><a href="about.php">About Us</a>
         <li><a href="#link1">Our Team</a>
         <li><a href="#link1">Contact Us</a>
         <li><a href="#link1">Privacy Policy</a>

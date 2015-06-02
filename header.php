@@ -17,8 +17,8 @@
 	<div class="container">
 		<div class="row">
             <div class="col-xs-12 col-sm-4 mainlinks">
-            <a href="#link1">Recipes</a>
-            <a href="#link1">Chop Feed</a>
+            <a href="recipe.php">Recipes</a>
+            <a href="feeds.php">Chop Feed</a>
             <a href="#link1">Chop Videos</a>
             </div>
             <div class="col-xs-12 col-sm-4 headerlogo">
