@@ -1,16 +1,4 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>MyChopBook</title>
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/lana_style.css" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
-
-<body>
 <?php
 include('header_log.php');
 ?>

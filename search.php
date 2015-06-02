@@ -31,12 +31,15 @@
                 {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
+
+                $search = $_GET['search'];
                 //sort a-z
-                $query = "  SELECT r.name, u.username,r.picture
-                            FROM recipe r, user u
-                            WHERE r.user_iduser = u.iduser
-                            ORDER BY r.datecreated DESC
-                            LIMIT 0,3";
+                $query = "  SELECT  DISTINCT r.name, u.username, r.picture
+                            FROM recipe r, user u, steps s
+                            WHERE r.user_iduser = u.iduser AND r.idrecipe = s.recipe_idrecipe
+                            AND (r.name LIKE '%$search%' or s.direction LIKE '%$search%')
+                            ORDER BY r.name DESC
+                            ";
                 $result = mysqli_query($con,$query);
 
                 //Associative array
