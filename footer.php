@@ -17,7 +17,7 @@
         <li><a href="about.php">About Us</a>
         <li><a href="#link1">Our Team</a>
         <li><a href="#link1">Contact Us</a>
-        <li><a href="#link1">Privacy Policy</a>
+        <li><a href="privacy.php">Privacy Policy</a>
         </ul>
         </div>
         
