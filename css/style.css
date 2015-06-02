@@ -1,43 +1,14 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
 body {
 	font-family:"Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;	
-}
-.topnav {
-	padding:5px 0;
-}
-
-.topnav img {
-	padding:0 5px;
-}
-
-.topnav a {
-	color:rgba(255,121,0,1);
 }
 
 .toplinks {
 	text-align:right;
-}
-
-.mainnav {
-	background:url(../images/headerbg.jpg)  no-repeat center rgba(255,121,0,.7);
-	min-height:150px;
-	padding:20px 0 0;
-}
-
-.topsearchbar {
-	padding-top:35px;
-}
-
-.topsearchinput {
-	background:#fff;
-	border:1px solid rgba(255,121,0,1);
-	height:30px;
-	width:70%;
-	border-radius:4px;
-	float:right;
-	padding-left: 10px;
 }
 
 .headerlogo {
@@ -52,22 +23,366 @@ body {
     padding: 45px 15px 0 0;
 }
 
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+body{
+    font-family:Lato;
+}
+
+/*start header footer css*/
+
+.topnav {
+    padding:5px 0;
+}
+
+.topnav img {
+    padding:0 5px;
+}
+
+.topnav a {
+    color:rgba(255,121,0,1);
+}
+
+.toplinks {
+    text-align:right;
+}
+
+.topnav .toplinks a {
+    padding: 12px;
+    text-decoration: none;
+}
+
+.topnav .toplinks a:hover {
+    background-color: #ff3608;
+    color:white;
+    text-decoration: none;
+}
+
+.mainnav {
+    background:url('../images/headerbg.jpg')  no-repeat center rgba(255,121,0,.7);
+    min-height:150px;
+    padding:20px 0 0;
+}
+
+.mainnav .mainlinks a{
+    text-decoration: none;
+}
+
+.mainnav .mainlinks a:hover{
+    color:white;
+}
+
+.topsearchbar {
+    padding-top:35px;
+}
+
+.topsearchinput {
+    background:#fff;
+    border:1px solid rgba(255,121,0,1);
+    height:30px;
+    width:70%;
+    border-radius:4px;
+    float:right;
+    padding-left: 10px;
+}
+
 footer {
-	background:#fbf9f5;
-	padding:20px 0;
+    background:#fbf9f5;
+    padding:20px 0;
+    margin-top:80px;
 }
 
 footer ul {
-	padding:0;
+    padding:0;
 }
 
 footer li {
-	list-style:none;	
+    list-style:none;
 }
 
 footer li a {
-	color:#000;
+    color:#000;
 }
+
+
+/*end header footer css*/
+
+.hero{
+    background: url("../images/hero.jpg") no-repeat;
+    background-size: cover;
+    height: 100%;
+
+}
+
+.hero-content{
+    width:350px;
+    height:262px;
+    margin: 0 auto;
+    padding:124px 0px 6px 0px;
+    margin-bottom:60px;
+}
+
+.hero-content form .btn {
+    float:none;
+}
+
+.herosearchbtn{
+    margin-left:10px;
+}
+
+.btn-red{
+    color:#fff;
+    background-color: #ff3608;
+    background-image: none;
+    border: none;
+}
+
+.btn-orange{
+    background-color:#ff9b00;
+    color:#fff;
+}
+
+.hero-content .btn-create{
+    display: block;
+    margin:20px auto !important;
+    color:#fff;
+    background-color: #ff3608;
+    background-image: none;
+    border: none;
+}
+
+.herosearchinput{
+    float:left;
+    width:272px;
+}
+
+.row{
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.tab{
+    width: 50%;
+    padding: 10px 0px;
+    text-align: center;
+    border-bottom: 1px solid #ffaf66;
+    border-left: 1px solid #ffaf66;
+    margin:0px;
+    float:left;
+    color: white;
+    background-color: #ff9b00;
+    text-decoration: none;
+    font-family: 'lato';
+    font-weight: 700;
+}
+
+.tab:hover{
+    text-decoration: none;
+    background-color:#ffaf66 ;
+    color:#ffffff;
+}
+
+
+.ninesixty_container{
+    width: 960px;
+    margin:0 auto;
+}
+
+.top_new{
+    text-align: center;
+    margin-top: 80px;
+    overflow:hidden;
+}
+
+.top_new h3{
+    color:#ff3608;
+    font-family: 'lato';
+    font-weight: 700;
+}
+
+.top_new a{
+    color:#000;
+    text-decoration: none;
+    font-family: 'lato';
+    font-weight: 300;
+}
+.chop_item{
+    margin:20px 0px;
+}
+.rating{
+    background-image: url("../images/knife_rating-icon.png");
+    width: 144px;
+    height: 37px;
+    display: block;
+    margin: 10px auto;
+    border:none;
+}
+
+form h3{
+    border-bottom:1px solid black;
+    color:#ff9b00;
+    padding-bottom:10px;
+}
+
+.form-control{
+    border:1px solid #ff9b00;
+}
+
+@media screen and (max-width:767px) {
+    .toplinks {
+        text-align:left;
+    }
+    .topsearchbar {
+        float:left;
+    }
+}
+
+/*lana css*/
+
+@charset "UTF-8";
+/* CSS Document */
+@-moz-document url-prefix() {
+    fieldset { display: table-cell; }
+}
+body,html {
+    height:100%;}
+img{
+    max-width:100%;
+}
+
+/*Feeds Page*/
+h2{
+    font-size:20px;}
+
+.feed {
+    border-radius: 4px  ;
+    background-color: #FFDD96;
+    padding:2px;
+    margin-right:2px;
+    margin-top:2px;
+}
+
+.text{
+    float:left;
+    padding:5px;}
+.user{
+    float:left;
+    padding:5px;
+}
+
+
+/*Contact Page and FAQ Page*/
+
+.sub-nav{
+    float:left;
+}
+
+ul.list-inline a{
+    color:black;
+    font-size:20px;}
+
+.caption {
+    display: block;
+
+}
+.faq li{
+    padding:5px;
+    margin:0 auto;
+    font-size:16px;
+    color:black;
+    float:left;
+    text-align:left;
+}
+.form-control{
+    border:1px solid rgba(255,121,0,1);
+
+}
+label{
+    font-size:18px;
+    font-weight:400;
+}
+
+.btn-submit {
+    color: #fff;
+    background-color: rgba(255,121,0,1);
+    border-color: #eea236;
+    width:150px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.65;
+    margin-bottom:10px;
+}
+
+/*About Page*/
+.wrapper{
+    padding:5px;
+    margin-bottom:20px;
+    height:auto;
+    text-align:left;}
+.clearfooter {
+    height: 300px;
+    clear: both;
+}
+footer {
+    position: relative;
+}
+
+/*My Chops*/
+.food li img{
+
+    max-width:100%;
+
+}
+
+ul.food{
+    text-align:center;
+    color:black;
+}
+
+
+.date{
+    padding:5px;
+    width:100px;
+    height:30px;
+    border-radius: 10px ;
+    background-color:#FA9E41;
+    margin-bottom:5px;
+    text-align:center;
+    font-size:1em;
+    overflow: hidden;
+}
+.rating {
+    display: block;
+    padding:5px;
+}
+.food li{
+    padding:5px;
+    margin:0 auto;
+    font-size:16px;
+    color:black;
+    float:left;
+    text-align:center;
+}
+
+footer {
+    background:#fbf9f5;
+    padding:20px 0;
+    margin-top:80px;
+}
+
+footer ul {
+    padding:0;
+}
+
+footer li {
+    list-style:none;
+}
+
+footer li a {
+    color:#000;
+}
+
+/*responsive elements*/
 
 @media screen and (max-width:767px) {
 .toplinks {
