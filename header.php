@@ -24,7 +24,8 @@
             <div class="col-xs-12 col-sm-4 headerlogo">
             <a href="#link"><img src="images/mychopbooklogo.png" alt="instagram"/></a>
             </div>
-            <div class="col-xs-12 col-sm-4 topsearchbar"><form><input class="topsearchinput" name="search" placeholder="Search"></form></div>
+            <div class="col-xs-12 col-sm-4 topsearchbar">
+            <form action="search.php"><input class="topsearchinput" name="search" placeholder="Search"><input type="submit" value="search"></form></div>
 		</div>
 	</div><!-- end container-->
 	</div><!-- end navarea-->

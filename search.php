@@ -47,11 +47,14 @@
     die("Connection failed: " . $con->connect_error);
 } 
 echo "    ";
-$search =$_GET['search'];
-$query="SELECT r.name, u.username, r.picture 
-		FROM recipe r, user u 
-		WHERE r.user_iduser=u.iduser 
-		AND r.name LIKE '%$search%'
+$search = $_GET['search'];
+$query="SELECT distinct r.name, u.username, r.picture, s.direction
+		FROM recipe r, user u ,steps s
+		WHERE  r.user_iduser=u.iduser 
+		
+AND r.idrecipe =s.recipe_idrecipe 
+AND (r.name LIKE '%$search%'
+		OR s.direction LIKE '%$search%')
 		ORDER BY datecreated DESC LIMIT 3";
 $result = mysqli_query($con,$query);
 while ($row=mysqli_fetch_assoc($result)){
@@ -59,6 +62,7 @@ while ($row=mysqli_fetch_assoc($result)){
 	echo '<img src="'.$row['picture'].'" alt="top chop" class="img-circle img-responsive">';
 	echo '<h3>'.$row['name']. "</h3>";
 	echo '<a>'.$row['username']. "</a>";
+	echo '<a>'.$row['direction']. "</a>";
 
 	echo '</div>';
 	}
