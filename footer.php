@@ -5,7 +5,7 @@
         <h4>Menu</h4>
         <ul>
         <li><a href="#link1">Recipes</a>
-        <li><a href="#link1">Chop Feed</a>
+        <li><a href="mychops.php">Chop Feed</a>
         <li><a href="#link1">Chop Videos</a>
         <li><a href="#link1">My Account</a>
         </ul>
@@ -14,10 +14,10 @@
         <div class="col-xs-12 col-sm-3">
         <h4>Company</h4>
         <ul>
-        <li><a href="#link1">About Us</a>
+        <li><a href="about.php">About Us</a>
         <li><a href="#link1">Our Team</a>
         <li><a href="contact.php">Contact Us</a>
-        <li><a href="#link1">Privacy Policy</a>
+        <li><a href="privacy.php">Privacy Policy</a>
         </ul>
         </div>
         
