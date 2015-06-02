@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-size: 18px;
+	font-family: "Gill Sans";
+    background-color:#fbf9f5;
+}
+.white_bg {
+	background-color: white;
+	opacity: 1.929;
+	position: absolute;
+	left: 111px;
+	top: 184px;
+	width: 1037px;
+	height: 1359px;
+}
+#Rectangle_4 {
+	background-color: rgb(255, 164, 82);
+	position: absolute;
+	left: 120px;
+	top: 158px;
+	width: 810px;
+	height: 48px;
+}
+#Rectangle_2 {
+	background-color: rgb(255, 164, 82);
+	position: absolute;
+	/* left: 120px; */
+	top: 541px;
+	width: 810px;
+	height: 53px;
+}
+#video1 {
+	/* background-color: rgb(255, 155, 0); */
+  /* position: absolute; */
+  /* left: 249px; */
+  /* top: 215px; */
+	width: 693px;
+	height: 459px;
+	margin: 20px 0px 0px 64px;
+}
+p {
+	font-size: 50px;
+	font-family: "Gill Sans";
+	color: rgb(242, 236, 226);
+	line-height: 0;
+	/* text-align: left; */
+  /* top: 673.825px; */
+  /* padding: 0px 50px 6px; */
+	margin: 23px;
+}
+4h {
+ font-size: 50px;
+ font-family: "Gill Sans";
+ font-weight: lighter;
+ color: rgb(255, 164, 82);
+ line-height: 1.2;
+}
+h5 {
+	font-size: 50px;
+	font-family: "Gill Sans";
+	font-weight: lighter;
+	color: rgb(255, 164, 82);
+	line-height: 1.2;
+	text-align: left;
+	position: absolute;
+	left: 171px;
+	top: 1138.837px;
+	z-index: 117;
+}
+<!--
+--  div.group {
+ display: inline;
+ list-style-type: none;
+ padding-right: 20px;
+ position: absolute;
+ left: 0px;
+ top: 0px;
+}
+box {
+	position: relative;
+	list-style-type: none;
+	text-decoration: none;
+	display: inline;
+	margin: 8px 15px;
+}
+<!--
+- first row of video --
+-->
+img {
+ margin:auto;
+}
+div.rvideo1 {
+	float: left;
+	position: absolute;
+	left: 298px;
+	top: 984px;
+	width: 210px;
+	height: 204px;
+	z-index: 135;
+}
+div.rvideo2 {
+	float: left;
+	position: absolute;
+	left: 521px;
+	top: 984px;
+	width: 210px;
+	height: 204px;
+	z-index: 136;
+}
+div.rvideo3 {
+	float: right;
+	position: absolute;
+	left: 744px;
+	top: 983px;
+	width: 210px;
+	height: 204px;
+	z-index: 137;
+}
+div.rvideo4 {
+	float: left;
+	position: absolute;
+	left: 304px;
+	top: 1300px;
+	width: 210px;
+	height: 204px;
+	z-index: 135;
+}
+div.rvideo5 {
+	float: left;
+	position: absolute;
+	left: 526px;
+	top: 1300px;
+	width: 210px;
+	height: 204px;
+	z-index: 136;
+}
+div.rvideo6 {
+	float: right;
+	position: absolute;
+	left: 750px;
+	top: 1299px;
+	width: 210px;
+	height: 204px;
+	z-index: 137;
+}
+a.food1 {
+	text-decoration: none;
+	color: rgb(255, 164, 82);
+	margin: 7px;
+}
+a.food2 {
+	text-decoration: none;
+	color: rgb(255, 164, 82);
+	margin: 32px;
+}
+a.food3 {
+	text-decoration: none;
+	color: rgb(255, 164, 82);
+	margin: 39px;
+}
+a.food4 {
+	text-decoration: none;
+	color: rgb(255, 164, 82);
+	margin: 17px
+}
+a.food5 {
+	text-decoration: none;
+	color: rgb(255, 164, 82);
+	margin: 32px;
+}
+a.food6 {
+	text-decoration: none;
+	color: rgb(255, 164, 82);
+	margin: -5px;
+}
+<!--
+-----------old css ---
+-->
+/*
+.food1 {
+
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  left: 172px;
+  top: 978px;
+  width: 210px;
+  height: 204px;
+}
+a.food1{
+	font-family: "Gill Sans";
+	color:#FCA95B;
+	text-decoration:none; 
+	margin:10px;
+	}
+
+
+.food2{
+  list-style-type: none;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  left: 172px;
+  top: 978px;
+  width: 210px;
+  height: 204px;
+}
+
+a.food2{
+   font-family: "Gill Sans";
+   color:#FCA95B;
+   text-decoration:none; 
+    margin:10px;
+}
+
+food3{
+  list-style-type: none;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  left: 172px;
+  top: 978px;
+  width: 210px;
+  height: 204px;
+	
+}
+
+a.food3{
+	font-family: "Gill Sans";
+	color:#FCA95B;
+	text-decoration:none; 
+	margin:10px;
+}
+
+*/

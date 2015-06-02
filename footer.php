@@ -4,9 +4,15 @@
         <div class="col-xs-12 col-sm-3">
         <h4>Menu</h4>
         <ul>
-        <li><a href="#link1">Recipes</a>
+<<<<<<< Updated upstream
+        <li><a href="recipe.php">Recipes</a>
         <li><a href="mychops.php">Chop Feed</a>
         <li><a href="#link1">Chop Videos</a>
+=======
+        <li><a href="recipe.php">Recipes</a>
+        <li><a href="#link1">Chop Feed</a>
+        <li><a href="">Chop Videos</a>
+>>>>>>> Stashed changes
         <li><a href="#link1">My Account</a>
         </ul>
         </div>

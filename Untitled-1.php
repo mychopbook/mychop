@@ -41,42 +41,6 @@
 
         <div class="container top_new">
             <div class="row">
-<<<<<<< Updated upstream
-            <?php 
-			$con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
-			if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-} 
-echo "    ";
-$search = $_GET['search'];
-$query="SELECT distinct r.name, u.username, r.picture
-		FROM recipe r, user u ,steps s
-		WHERE  r.user_iduser=u.iduser 
-		
-AND r.idrecipe =s.recipe_idrecipe 
-AND (r.name LIKE '%$search%'
-		OR s.direction LIKE '%$search%')
-		ORDER BY datecreated DESC LIMIT 3";
-$result = mysqli_query($con,$query);
-while ($row=mysqli_fetch_assoc($result)){
-	echo '<div class="col-sm-4 chop_item">';
-	echo '<img src="'.$row['picture'].'" alt="top chop" class="img-circle img-responsive">';
-	echo '<h3>'.$row['name']. "</h3>";
-	echo '<a>'.$row['username']. "</a>";
-	echo '<a>'.$row['direction']. "</a>";
-
-	echo '</div>';
-	}
-
-
-// Free result set
-mysqli_free_result($result);
-
-mysqli_close($con);
-
-?>
-		
-=======
             <?php
 			$con = mysqli_connect("localhost","root","root","mychopbook");
 
@@ -87,15 +51,10 @@ if (mysqli_connect_errno())
   }
   //SORT ALPHABETICAL A-Z
 	//$query = "SELECT * FROM recipe ORDER BY name";//
-	
-	$search = $GET["search"];
-	echo "<h2>You search for:<em>$search</em></h2>";
 	$query = "SELECT r.name, r.picture, u.username 
    FROM recipe	r, user u 
    WHERE r.user_iduser = u.iduser
-   AND r.name Like '%search%'
-   ORDER BY r.name";
-	
+   ORDER BY datecreated";
 	$result = mysqli_query($con,$query);		
 	
 	
@@ -131,7 +90,6 @@ if (mysqli_connect_errno())
                <p class="rating"></p>
                     <a>CookKing</a>
            </div>
->>>>>>> Stashed changes
             </div>
         </div><!--end container-->
 
