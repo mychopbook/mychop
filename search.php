@@ -56,8 +56,6 @@ AND r.idrecipe =s.recipe_idrecipe
 AND (r.name LIKE '%$search%'
 		OR s.direction LIKE '%$search%')
 		ORDER BY datecreated DESC LIMIT 3";
-
-        echo $query;
 $result = mysqli_query($con,$query);
 while ($row=mysqli_fetch_assoc($result)){
 	echo '<div class="col-sm-4 chop_item">';
