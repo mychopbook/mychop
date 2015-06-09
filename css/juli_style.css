@@ -22,3 +22,14 @@
 				
 			
 
+@media screen and (min-width: 768px) {
+		#btn_profile .btn {		margin-top: 160px;
+								margin-left: 450px;}
+
+}
+
+.col-xs-6 { width: 40%;}
+
+ul > li { 	margin-bottom: 3px;}
+
+input { margin-bottom: 14px !important;}
