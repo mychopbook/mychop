@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+/* -------------  Profile page CSS ---------- */
+
+
+
+#menu_account { margin-left: 20px;}
+
+#leftbar { height: 600px;} 
+
+#leftbar h3 { text-align:center;}
+
+.rounded img{ margin-left: 20px;
+				margin-top: 30px;
+				padding: 6px;	
+ 				border:2px dashed #000000;   
+				border-radius: 50%;}
+				
+			
+
