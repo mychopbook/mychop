@@ -14,8 +14,7 @@ include('header.php');
 <div class="recipetitle">
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-md-9">
-				<?php
+			<?php
                 $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
 
                 // Check connection
@@ -24,38 +23,32 @@ include('header.php');
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
                 //sort a-z
-                $query = "  SELECT r.name, u.username
-                            FROM recipe r, user u
+                $query = "  SELECT r.name, u.username, rt.ratingnumber
+                            FROM recipe r, user u, rating rt
                             WHERE r.user_iduser = u.iduser
-                            ORDER BY r.datecreated DESC
-                            LIMIT 0,1";
+                            AND r.idrecipe = rt.recipe_idrecipe
+                            AND r.idrecipe = 1";
                 $result = mysqli_query($con,$query);
 
                 //Associative array
 
                 while ($row=mysqli_fetch_assoc($result)){
-                    echo '<div class="col-sm-4 chop_item">';
-                    echo '<img src="'.$row['picture'].'" alt="top chop" class="img-circle img-responsive">';
-                    echo '<h3>' .$row['name'] .'</h3>';
-                    echo '<p class="rating"></p>';
-                    echo '<a>'.$row['username'].'</a>';
+                	echo '<div class="col-xs-12 col-md-9">';
+                    echo '<h2>' .$row['name'] .'</h2>';
+                    echo '<span>'.$row['username'].'</span>';
                     echo '</div>';
+                    echo '<div class="col-xs-12 col-md-1">';
+		        	echo '<h3>Rating:</h3>';
+					echo '</div>';
+					echo '<div class="col-xs-12 col-md-2">';
+					echo '<img src="images/rating' .$row['ratingnumber'] . '.png" alt="rating"/>';
+					echo '</div>';
                 }
 
-        ?>
-
-			<h2>Fresh Fruit Salad</h2>
-			<span>By: username</span>
-		</div>
-		<div class="col-xs-12 col-md-1">
-			<h3>Rating:</h3>
-		</div>
-		<div class="col-xs-12 col-md-2">
-			<img src="images/ratings.png" alt="rating"/>
-		</div>
-	</div>
-</div>
-</div>
+        	?>
+	</div><!-- end row -->
+</div><!-- end container -->
+</div><!-- end recipetitle -->
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-8">
@@ -107,14 +100,46 @@ include('header.php');
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-md-6 reviewslist">
-			<h3>Reviews:</h3>
-			<ul>
+		<h3>Reviews:</h3>
+		<?php include('includes/timeago.php');?>
+		<!---review query-->
+					<ul>
+		<?php
+                        
+                        $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                        // Check connection
+                        if (mysqli_connect_errno())
+                        {
+                            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                        }
+                        $query = "  SELECT u.username, rw.comment, rw.datecreate
+                        			FROM user as u, review as rw
+                        			WHERE u.iduser = rw.user_iduser AND rw.recipe_idrecipe = 1
+                        			ORDER BY rw.datecreate DESC";
+                        $result = mysqli_query($con,$query);
+                        //Associative array
+
+                        while ($row=mysqli_fetch_assoc($result)){
+                            echo '<li>' .$row['comment'];
+                            echo '<p class="'.'reviewstamp'.'">'.'<b>' .$row['username'].'</b>';
+                            echo '<span>'.'  posted '.' ';
+                            echo timeAgoInWords($row["datecreate"]).'</span>'.'</p>';
+
+                            echo '</li>';
+
+                        }
+
+                        ?>
+                     </ul>
+
+			<!--<ul>
 				<li>This is absolutely my favorite fruit salad. My guests love it, too!<br>-Angela</li>
 				<li>This is absolutely the best fruit salad I have ever served. Besides being a beautiful presentation, the flavors were beyond compare to any fruit salad I have had. I have omitted and added a few ingredients here and there - still the best!!!!<br>-Laura</li>
 				<li>I made this for a family barbecue last weekend and boy was it good! I used orange juice instead of the orange liquor because kids were eating it. I also used fruit that my grocery store had so I added extra strawberries instead of raspberries. Very refreshing and lite tasting.<br>-Jaqueline</li>
 				<li>I've made this for 3 different occasions and everyone has absolutely loved it - even when the guests prefer cakes for dessert!<br>-Charity</li>
 				<li>I have made this salad multiple tme and it is always a hit.<br>-Jennifer</li>
-			</ul>
+			</ul>-->
 		</div>
 		<div class="col-xs-12 col-md-6">
 		<h3>Video:</h3>

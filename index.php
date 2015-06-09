@@ -50,21 +50,7 @@
                 }
 
                 ?>
-           <!--<div class="col-sm-4 chop_item"><img src="images/beans.png" alt="top chop" class="img-circle">
-               <h3>Kangarume</h3>
-                   <p class="rating"></p>
-                        <a>CookKing</a>
-           </div>
-           <div class="col-sm-4"><img src="images/beans.png" alt="top chop" class="img-circle">
-               <h3>Kangarume</h3>
-                    <p class="rating"></p>
-                        <a>CookKing</a>
-           </div>
-           <div class="col-sm-4"><img src="images/beans.png" alt="top chop" class="img-circle">
-            <h3>Kangarume</h3>
-               <p class="rating"></p>
-                    <a>CookKing</a>
-           </div>-->
+          
             </div>
         </div><!--end container-->
 

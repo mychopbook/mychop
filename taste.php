@@ -7,8 +7,6 @@
     <title>My Chop Book</title>
     <!--chop theme-->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Taste theme -->
-    <link rel="stylesheet" href="css/juli_style.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- Optional theme -->
