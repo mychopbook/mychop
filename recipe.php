@@ -14,8 +14,7 @@ include('header.php');
 <div class="recipetitle">
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-md-9">
-				<?php
+			<?php
                 $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
 
                 // Check connection
@@ -24,38 +23,32 @@ include('header.php');
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
                 //sort a-z
-                $query = "  SELECT r.name, u.username
-                            FROM recipe r, user u
+                $query = "  SELECT r.name, u.username, rt.ratingnumber
+                            FROM recipe r, user u, rating rt
                             WHERE r.user_iduser = u.iduser
-                            ORDER BY r.datecreated DESC
-                            LIMIT 0,1";
+                            AND r.idrecipe = rt.recipe_idrecipe
+                            AND r.idrecipe = 1";
                 $result = mysqli_query($con,$query);
 
                 //Associative array
 
                 while ($row=mysqli_fetch_assoc($result)){
-                    echo '<div class="col-sm-4 chop_item">';
-                    echo '<img src="'.$row['picture'].'" alt="top chop" class="img-circle img-responsive">';
-                    echo '<h3>' .$row['name'] .'</h3>';
-                    echo '<p class="rating"></p>';
-                    echo '<a>'.$row['username'].'</a>';
+                	echo '<div class="col-xs-12 col-md-9">';
+                    echo '<h2>' .$row['name'] .'</h2>';
+                    echo '<span>'.$row['username'].'</span>';
                     echo '</div>';
+                    echo '<div class="col-xs-12 col-md-1">';
+		        	echo '<h3>Rating:</h3>';
+					echo '</div>';
+					echo '<div class="col-xs-12 col-md-2">';
+					echo '<img src="images/rating' .$row['ratingnumber'] . '.png" alt="rating"/>';
+					echo '</div>';
                 }
 
-        ?>
-
-			<h2>Fresh Fruit Salad</h2>
-			<span>By: username</span>
-		</div>
-		<div class="col-xs-12 col-md-1">
-			<h3>Rating:</h3>
-		</div>
-		<div class="col-xs-12 col-md-2">
-			<img src="images/ratings.png" alt="rating"/>
-		</div>
-	</div>
-</div>
-</div>
+        	?>
+	</div><!-- end row -->
+</div><!-- end container -->
+</div><!-- end recipetitle -->
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-8">
