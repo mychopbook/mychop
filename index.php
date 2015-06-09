@@ -1,4 +1,3 @@
-
 <?php include('header.php');?>
     <div class="">
 
@@ -24,7 +23,7 @@
         <div class="container top_new">
             <div class="row">
                 <?php
-                $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbbok");
+                $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
 
                 // Check connection
                 if (mysqli_connect_errno())
