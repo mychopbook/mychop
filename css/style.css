@@ -228,6 +228,7 @@ form h3{
     border:1px solid #ff9b00;
 }
 
+
 @media screen and (max-width:767px) {
     .toplinks {
         text-align:left;
@@ -454,3 +455,9 @@ footer li a {
 	padding: 10px;
 	font-size:16px;
 }
+
+ul { list-style-type:none;}
+
+.nav-tabs { padding-top: 25px;}
+
+#leftbar {padding-top: 25px;}

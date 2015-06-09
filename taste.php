@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ awd<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -21,35 +21,36 @@
 
 <?php include('header.php');?>
 
-<!-- Left Menu-->
-<div class="col-md-4" id="leftbar">
 
-<div class="rounded">
-<img src="images/usermale.png" alt="profile_icon">
-</div>
-  
-  <h3>  Profile Image </h3>
-    
-    
-</div>
-
-
-<!-- Form -->
 <div class="container">
 <div class="row">
 
-<ul class="nav nav-tabs">
-  <li role="presentation" ><a href="profile.php">Profile</a></li>
-  <li role="presentation" class="active"><a href="taste.php">Taste Preference</a></li>
-  <li role="presentation"><a href="history.php">History</a></li>
-</ul>
+<!-- Left Menu-->
+<div class="col-md-4" id="leftbar">
+        
+        <div class="rounded">
+        <img src="images/usermale.png" alt="profile_icon">
+        </div>
+          
+          <h3>  Profile Image </h3> 
+        </div>
+        
+    <div class="col-md-8">
+                    <div class="row">
+                    	<div class="col-xs-12">
+                            <ul class="nav nav-tabs">
+                              <li role="presentation"><a href="profile.php">Profile</a></li>
+                              <li role="presentation" class="active"><a href="taste.php">Taste Preference</a></li>
+                              <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/history.html">History</a></li>
+                            </ul>
+                         </div>
+                    </div>
 
-
-
+<!-- Form -->
   <div class="col-xs-6">
   
      <p class="diets">
-        <h4>Diets</h4>
+        <h3>Diets</h3>
         <ul class="left-menu">
         <li><input type="checkbox" name="diets[]" value="paleo"> Paleo </li>
         <li><input type="checkbox" name="diets[]" value="gluten Free"> Gluten Free </li>
@@ -62,7 +63,7 @@
         </p>
         
            <p class="cuisine">
-        <h4>Favorites Cuisine</h4>
+        <h3>Favorites Cuisine</h3>
         <ul class="left-menu">
         <li><input type="checkbox" name="cuisine[]" value="italian"> Italian </li>
         <li><input type="checkbox" name="cuisine[]" value="french"> French </li>
@@ -87,7 +88,7 @@
     
 <div class="col-xs-6">
     <p class="prep-time">
-        <h4>Preparation Time</h4>
+        <h3>Preparation Time</h3>
         <ul class="left-menu">
         <li><input type="checkbox" name="prep-time[]" value="5min"> 5-10 minutes </li>
         <li><input type="checkbox" name="prep-time[]" value="15min"> 10-15 minutes  </li>
@@ -99,7 +100,7 @@
         </p>
         
         <p class="skills">
-        <h4>Cooking Skills</h4>
+        <h3>Cooking Skills</h3>
         <ul class="left-menu">
         <li><input type="checkbox" name="skills[]" value="beginner"> Beginner  </li>
         <li><input type="checkbox" name="skills[]" value="intermediate"> Intermediate  </li>
@@ -108,7 +109,7 @@
         </p>
         
           <p class="allergies">
-        <h4>Allergies</h4>
+        <h3>Allergies</h3>
         <ul class="left-menu">
         <li><input type="checkbox" name="allergies[]" value="dairy-free"> Dairy-Free </li>
         <li><input type="checkbox" name="allergies[]" value="gluten-free"> Gluten-free  </li>
@@ -118,11 +119,12 @@
         </ul>
         </p>
         
-    
+
 <div id="btn_profile" >  
    <!-- Save Bttn -->
- <button type="button" class="btn btn-warning">Save</button>
+ <button type="button" class="btn btn-red">Save</button>
 </div>
+
     
 </div>
    </form>
