@@ -78,19 +78,46 @@ include('header.php');
                     	?>
                     	<!--recipe picture query end-->
 		</div>
-		<div class="col-xs-12 col-md-4 recipeinfolist">
-			<h3>Recipe Details:</h3>
-			<ul>
-			<li><strong>Cuisine</strong>: Italian</li>
-			<li><strong>Prep Time</strong>: 30 mins</li>
-			<li><strong>Cooking Skill</strong>: Beginner</li>
-			<li><strong>Preferences</strong>: Vegan, Vegetarian</li>
-			<li><strong>Meal Type</strong>: Lunch</li>
-			<li><strong>Prep Method</strong>: Raw</li>
-			<li><strong>Prep Time</strong>: 30 mins</li>
-			</ul>
-			<a href="#link" alt="Add to MyChops">+ Add This Recipe to MyChops</a>
-		</div>
+				<?php
+                $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                // Check connection
+                if (mysqli_connect_errno())
+                {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+                //sort a-z
+                $query = "  SELECT c.name as cuisinename, r.preptime_hours, r.preptime_mins, r.cookingskill, p.name as preferencename, m.name as mealtypename, pm.name as prepmethodname
+                            FROM recipe r, recipe_has_cuisine rhc, cuisine c, recipe_has_preference rhp, preference p, recipe_has_mealtype rhm, mealtype m, recipe_has_prepmethod rhpm, prepmethod pm
+                            WHERE r.idrecipe = rhc.recipe_idrecipe
+                            AND rhc.cuisine_idcuisine = c.idcuisine
+                            AND r.idrecipe = rhp.recipe_idrecipe
+                            AND rhp.preference_idcategory = p.idcategory
+                            AND r.idrecipe = rhm.recipe_idrecipe
+                            AND rhm.mealtype_idmealtype = m.idmealtype
+                            AND r.idrecipe = rhpm.recipe_idrecipe 
+                            AND rhpm.prepmethod_idprepmethod = pm.idprepmethod                        
+                            AND r.idrecipe = 1";
+                $result = mysqli_query($con,$query);
+
+                //Associative array
+
+                while ($row=mysqli_fetch_assoc($result)){
+                    echo '<div class="col-xs-12 col-md-4 recipeinfolist">';
+		        	echo '<h3>Recipe Details:</h3>';
+					echo '<ul>';
+					echo '<li><strong>Cuisine</strong>: ' . $row['cuisinename'] . '</li>';
+					echo '<li><strong>Prep Time</strong>: ' . $row['preptime_hours']. ' hour(s) and ' . $row['preptime_mins'] . 'min(s)' . '</li>';
+					echo '<li><strong>Cooking Skill</strong>: ' . $row['cookingskill'] . '</li>';
+					echo '<li><strong>Preferences</strong>: ' . $row['preferencename'] . '</li>';
+					echo '<li><strong>Meal Type</strong>: ' . $row['mealtypename'] . '</li>';
+					echo '<li><strong>Prep Method</strong>: ' . $row['prepmethodname'] . '</li>';
+					echo '</ul>';
+					echo '<a href="#link" alt="Add to MyChops">+ Add This Recipe to MyChops</a>';
+					echo '</div>';
+                }
+
+        	?>
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-md-7">
