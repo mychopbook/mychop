@@ -7,8 +7,6 @@
     <title>My Chop Book</title>
     <!--chop theme-->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Profile theme -->
-    <link rel="stylesheet" href="css/juli_style.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- Optional theme -->
@@ -23,94 +21,102 @@
 <?php include('header.php');?>
 
 <div class="container">
-<div class="row">
-<!-- Left Menu-->
+    <div class="row">
+    <!-- Left Menu-->
+    
+        <div class="col-md-4" id="leftbar">
+        
+        <div class="rounded">
+        <img src="images/usermale.png" alt="profile_icon">
+        </div>
+          
+          <h3>  Profile Image </h3> 
+        </div>
+        
+    <div class="col-md-8">
+                    <div class="row">
+                    	<div class="col-xs-12">
+                            <ul class="nav nav-tabs">
+                              <li role="presentation" class="active"><a href="profile.php">Profile</a></li>
+                              <li role="presentation"><a href="taste.php">Taste Preference</a></li>
+                              <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/history.html">History</a></li>
+                            </ul>
+                         </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                    <form>
+                        <div class="col-xs-12 col-sm-6">
+                            <p class="personal">
+                            <h3>Personal Information </h3>
+                            
+                            <div class="form-group">
+                            	<label for="Name"> Name </label>
+                            	<input  type="text" class="form-control" name="name" placeholder="You Name" size="40" > 
+                            </div>    
+                          
+                            <div class="form-group">
+                                <label for="lastname"> Last Name </label>
+                                <input type="text"  class="form-control" name="lastname" placeholder="Last Name" size="40">
+                            </div>     
+                                
+                            <div class="form-group">    
+                                <label for="email"> Email </label>
+                                <input type="text"  class="form-control"name="email" placeholder="Email" size="40"> 
+                            </div>
+                                
+                            <div class="form-group">    
+                                <label for="pass"> Password </label>
+                                <input type="text"  class="form-control" name="password" placeholder="Password" size="40"> 
+                             </div>
+                              
+                            </p>
+                            
+                        </div>
+                    
+                        <div class="col-xs-12 col-sm-6">
+                            <p class="social">
+                            <h3>Social Media  </h3>
+                           
+                                <div class="form-group">
+                                    <label for="facebook"> Facebook </label>
+                                    <input  type="text"  class="form-control" name="Facebook" placeholder="Facebook Username" size="40" >
+                                </div>    
+                                    
+                                 <div class="form-group">    
+                                    <label for="pinterest"> Pinterest </label>
+                                    <input type="text"  class="form-control" name="Pinterest" placeholder="Pinterest Username" size="40"> 
+                                  </div>  
+                                   
+                                 <div class="form-group">  
+                                    <label for="twitter"> Twitter</label>
+                                    <input type="text"  class="form-control" name="Twitter" placeholder="Twitter Username" size="40">
+                                 </div>   
+                                    
+                                 <div class="form-group">   
+                                    <label for="instagram">  Instagram </label>
+                                    <input type="text"  class="form-control" name="Instagram" placeholder="Instagram Username" size="40"> 
+                                </div>
+                            </p>
+                            
+                            <div id="btn_profile" >  
+                               <!-- Save Bttn -->
+                             <button type="button" class="btn btn-red">Save</button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                    </div>  
 
-<div class="col-md-4" id="leftbar">
-
-<div class="rounded">
-<img src="images/usermale.png" alt="profile_icon">
-</div>
-  
-  <h3>  Profile Image </h3> 
-</div>
-
-
-<!-- Form -->
-
-
-<div class="row">
-<div class="col-sm-9">
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="../julissaroa.co/mychopbookfolder/profile.html">Profile</a></li>
-  <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/taste.html">Taste Preference</a></li>
-  <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/history.html">History</a></li>
-</ul>
-
-
-<div class="row">
-<div class="col-xs-8 col-sm-6">
- <form>
-    <p class="personal">
-    <h4>Personal Information </h4>
-    <ul>
-    <li> Name </br>
-    <input  type="text" name="name" placeholder="You Name" size="40" > </li>
+    </div> <!-- col-8 -->
     
-    <li> Last Name </br>
-    <input type="text" name="lastname" placeholder="Last Name" size="40"> </li> 
     
-    <li> Email </br>
-    <input type="text" name="email" placeholder="Email" size="40"> </li>
-    
-    <li> Password </br>
-    <input type="text" name="password" placeholder="Password" size="40"> </li>
-    </ul>
-    </p>
-    
-</div>
-
-    
-
-<div class="row">
-<div class="col-xs-8 col-sm-6">
-    <p class="social">
-    <ul>
-    
-    <li>
-    Facebook </br>
-    <input  type="text" name="Facebook" placeholder="Facebook Username" size="40" ></li>
-    
-    <li>
-    Pinterest </br>
-    <input type="text" name="Pinterest" placeholder="Pinterest Username" size="40"> </li>
-    
-    <li>
-    Twitter </br>
-    <input type="text" name="Twitter" placeholder="Twitter Username" size="40"> </li>
-    
-    <li>
-    Instagram </br>
-    <input type="text" name="Instagram" placeholder="Instagram Username" size="40"> </li>
-    
-    </ul>
-    </p>
-    
-<div id="btn_profile" >  
-   <!-- Save Bttn -->
- <button type="button" class="btn btn-warning">Save</button>
-</div>
-    
-</div>
-   </form>
  
- </div>  
-</div>
-
-</div>
-</div>
-</div>
-</div>
+    
+    
+    </div><!-- row -->
+</div><!-- container -->
 
 
 

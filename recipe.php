@@ -115,14 +115,46 @@ include('header.php');
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-md-6 reviewslist">
-			<h3>Reviews:</h3>
-			<ul>
+		<h3>Reviews:</h3>
+		<?php include('includes/timeago.php');?>
+		<!---review query-->
+					<ul>
+		<?php
+                        
+                        $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                        // Check connection
+                        if (mysqli_connect_errno())
+                        {
+                            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                        }
+                        $query = "  SELECT u.username, rw.comment, rw.datecreate
+                        			FROM user as u, review as rw
+                        			WHERE u.iduser = rw.user_iduser AND rw.recipe_idrecipe = 1
+                        			ORDER BY rw.datecreate DESC";
+                        $result = mysqli_query($con,$query);
+                        //Associative array
+
+                        while ($row=mysqli_fetch_assoc($result)){
+                            echo '<li>' .$row['comment'];
+                            echo '<p class="'.'reviewstamp'.'">'.'<b>' .$row['username'].'</b>';
+                            echo '<span>'.'  posted '.' ';
+                            echo timeAgoInWords($row["datecreate"]).'</span>'.'</p>';
+
+                            echo '</li>';
+
+                        }
+
+                        ?>
+                     </ul>
+
+			<!--<ul>
 				<li>This is absolutely my favorite fruit salad. My guests love it, too!<br>-Angela</li>
 				<li>This is absolutely the best fruit salad I have ever served. Besides being a beautiful presentation, the flavors were beyond compare to any fruit salad I have had. I have omitted and added a few ingredients here and there - still the best!!!!<br>-Laura</li>
 				<li>I made this for a family barbecue last weekend and boy was it good! I used orange juice instead of the orange liquor because kids were eating it. I also used fruit that my grocery store had so I added extra strawberries instead of raspberries. Very refreshing and lite tasting.<br>-Jaqueline</li>
 				<li>I've made this for 3 different occasions and everyone has absolutely loved it - even when the guests prefer cakes for dessert!<br>-Charity</li>
 				<li>I have made this salad multiple tme and it is always a hit.<br>-Jennifer</li>
-			</ul>
+			</ul>-->
 		</div>
 		<div class="col-xs-12 col-md-6">
 		<h3>Video:</h3>
