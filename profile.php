@@ -23,6 +23,7 @@
 <?php include('header.php');?>
 
 
+<div class="row">
 <!-- Left Menu-->
 <div class="col-md-4" id="leftbar">
 
@@ -39,7 +40,7 @@
 
 <!-- Form -->
 
-<div class="row">
+
 
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="../julissaroa.co/mychopbookfolder/profile.html">Profile</a></li>
@@ -49,7 +50,7 @@
 
 
 
-  <div class="col-xs-6">
+  <div class="col-md-6">
     <form>
     <p class="personal">
     
@@ -78,7 +79,7 @@
 </div>
 
     
-<div class="col-xs-6">
+<div class="col-md-6">
     <p class="social">
     
     <ul>
