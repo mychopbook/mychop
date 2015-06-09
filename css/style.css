@@ -151,6 +151,17 @@ footer li a {
     border: none;
 }
 
+.reviewstamp {
+    font-size: 10px;
+    padding-top: 10px;
+    color:#ff9b00;
+    font-style: italic;
+}
+
+.reviewstamp span{
+    color:black;
+}
+
 .herosearchinput{
     float:left;
     width:272px;
