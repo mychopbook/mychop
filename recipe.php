@@ -52,7 +52,31 @@ include('header.php');
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-8">
-			<img src="images/recipeimg.png" alt="rating" width="90%"/>
+			<!--<img src="images/recipeimg.png" alt="rating" width="90%"/>-->
+			<!--recipe picture query-->
+			<?php
+                            $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                            // Check connection
+                            if (mysqli_connect_errno())
+                            {
+                                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                            }
+                            //sort a-z
+                            $query = "  SELECT picture
+                            			FROM recipe
+                            			WHERE idrecipe= 1";
+                            $result = mysqli_query($con,$query);
+
+                            //Associative array
+
+                            while ($row=mysqli_fetch_assoc($result)){
+                            	echo '<img src="'.$row['picture'].'" alt="recipepicture" width="90%">';
+
+                            }
+
+                    	?>
+                    	<!--recipe picture query end-->
 		</div>
 		<div class="col-xs-12 col-md-4 recipeinfolist">
 			<h3>Recipe Details:</h3>
@@ -72,7 +96,30 @@ include('header.php');
 		<div class="col-xs-12 col-md-7">
 			<h3>Directions:</h3>
 			<ol>
-				<li>Peel and dice the mango or papaya, and put in a medium bowl. Trim the strawberries' stems and half or quarter, if large. Add to the bowl of fruit. Peel and dice the kiwi, add to bowl. Peel and slice the bananas, add to bowl.
+			<?php
+                                        $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                                        // Check connection
+                                        if (mysqli_connect_errno())
+                                        {
+                                            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                                        }
+                                        //sort a-z
+                                        $query = "  SELECT picture,direction
+                                                    FROM steps
+                                                    WHERE recipe_idrecipe = 1";
+                                        $result = mysqli_query($con,$query);
+
+                                        //Associative array
+
+                                        while ($row=mysqli_fetch_assoc($result)){
+                                        	echo '<li>'.$row['direction'];
+                                        	echo '<img src="'.$row['picture'].'" alt="step" width="100%">';
+                                        	echo '</li>';
+                                        }
+
+                                	?>
+				<!--<li>Peel and dice the mango or papaya, and put in a medium bowl. Trim the strawberries' stems and half or quarter, if large. Add to the bowl of fruit. Peel and dice the kiwi, add to bowl. Peel and slice the bananas, add to bowl.
                 <img src="images/step1.jpg" alt="step" width="100%"/>
 				</li>
 				<li>Cut the top and bottom off the oranges just deep enough to expose the inner fruit. Following the curve of the fruit cut the skin and pith off the orange in panels. Holding the orange over the bowl cut between the membranes to free the citrus segments. Let them fall into the bowl as they are cut free. By hand, squeeze all the juice from the remaining membrane over the fruit, then discard. Repeat with the other orange.
@@ -80,7 +127,7 @@ include('header.php');
 				</li>
 				<li>Lightly stir the honey and Grand Marnier, if using, into the fruit. Strip the mint leaves off the stem, tear, or chop into smaller pieces, and stir into the fruit salad. Add the berries and set aside for 10 minutes or up to 2 hours. Serve.
 				<img src="images/step3.jpg" alt="step" width="100%"/>
-				</li>
+				</li>-->
 			</ol>
 		</div>
 		<div class="col-xs-12 col-md-5 ingredientslist">
