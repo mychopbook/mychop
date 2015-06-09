@@ -22,9 +22,10 @@
 
 <?php include('header.php');?>
 
-
-<!-- Left Menu-->
+<div class="container">
 <div class="row">
+<!-- Left Menu-->
+
 <div class="col-md-4" id="leftbar">
 
 <div class="rounded">
@@ -33,12 +34,9 @@
   
   <h3>  Profile Image </h3> 
 </div>
-</div>
 
 
 <!-- Form -->
-
-
 
 
 <ul class="nav nav-tabs">
@@ -48,8 +46,6 @@
 </ul>
 
 
-
-<div class="row">
 
  <form>
 <div class="col-md-6">
@@ -75,28 +71,26 @@
 
     
 <div class="col-md-6">
+
     <p class="social">
-    
     <ul>
+    
     <li>
     Facebook </br>
-    <input  type="text" name="Facebook" placeholder="Facebook Username" size="40" >
-    </li>
+    <input  type="text" name="Facebook" placeholder="Facebook Username" size="40" ></li>
     
     <li>
     Pinterest </br>
-    <input type="text" name="Pinterest" placeholder="Pinterest Username" size="40"> 
-    </li>
+    <input type="text" name="Pinterest" placeholder="Pinterest Username" size="40"> </li>
     
     <li>
     Twitter </br>
-    <input type="text" name="Twitter" placeholder="Twitter Username" size="40"> 
-    </li>
+    <input type="text" name="Twitter" placeholder="Twitter Username" size="40"> </li>
     
     <li>
     Instagram </br>
-    <input type="text" name="Instagram" placeholder="Instagram Username" size="40"> 
-    </li>
+    <input type="text" name="Instagram" placeholder="Instagram Username" size="40"> </li>
+    
     </ul>
     </p>
     
@@ -108,6 +102,8 @@
 </div>
    </form>
 </div>
+</div>
+
 
 
 
