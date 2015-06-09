@@ -526,16 +526,7 @@ ul { list-style-type:none;}
 	height: 459px;
 	margin: 20px 0px 0px 64px;
 }
-p {
-	font-size: 50px;
-	font-family: "Gill Sans";
-	color: rgb(242, 236, 226);
-	line-height: 0;
-	/* text-align: left; */
-  /* top: 673.825px; */
-  /* padding: 0px 50px 6px; */
-	margin: 23px;
-}
+
 4h {
  font-size: 50px;
  font-family: "Gill Sans";
