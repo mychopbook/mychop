@@ -4,9 +4,9 @@
         <div class="col-xs-12 col-sm-3">
         <h4>Menu</h4>
         <ul>
-        <li><a href="#link1">Recipes</a></li>
+        <li><a href="recipe.php">Recipes</a></li>
         <li><a href="feeds.php">Chop Feed</a></li>
-        <li><a href="#link1">Chop Videos</a></li>
+        <li><a href="video.php">Chop Videos</a></li>
         <li><a href="#link1">My Account</a></li>
         </ul>
         </div>

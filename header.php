@@ -38,7 +38,7 @@
             <div class="col-xs-12 col-sm-4 mainlinks">
             <a href="recipe.php">Recipes</a>
             <a href="feeds.php">Chop Feed</a>
-            <a href="#link1">Chop Videos</a>
+            <a href="video.php">Chop Videos</a>
             </div>
             <div class="col-xs-12 col-sm-4 headerlogo">
             <a href="index.php"><img src="images/mychopbooklogo.png" alt="instagram"/></a>

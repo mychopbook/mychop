@@ -86,16 +86,31 @@ include('header.php');
 		<div class="col-xs-12 col-md-5 ingredientslist">
 		<h3>Ingredients:</h3>
 			<ul>
-				<li>1 papaya or mango (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>1 cup strawberries (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>2 kiwis (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>1 banana (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>2 navel oranges (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>3 tablespoons honey (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>1 tablespoon Grand Marnier, optional (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>3 to 5 sprigs fresh mint (<a href="#link">+ Add to shopping list</a>)</li>
-				<li>1 cup raspberries or blueberries (<a href="#link">+ Add to shopping list</a>)</li>
-			</ul>
+             <?php
+                $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                // Check connection
+                if (mysqli_connect_errno())
+                {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+                //sort a-z
+                $query = "  SELECT i.name, rhi.ingredient_amount,rhi.ingredient_unit
+							FROM ingredient i, recipe_has_ingredient rhi, recipe r
+							WHERE rhi.recipe_idrecipe=r.idrecipe
+							AND i.idingredient= rhi.ingredient_idingredient
+							AND r.idrecipe= 1";
+                $result = mysqli_query($con,$query);
+
+                //Associative array
+
+                while ($row=mysqli_fetch_assoc($result)){
+                    echo '<li>'.$row['ingredient_amount']."    ".$row['ingredient_unit']."   ".$row['name']."    (+ Add to shopping list )</li>";
+                   
+                }
+
+                ?>
+				
 		</div>
 	</div>
 	<div class="row">
@@ -111,7 +126,30 @@ include('header.php');
 		</div>
 		<div class="col-xs-12 col-md-6">
 		<h3>Video:</h3>
-		<iframe width="100%" height="315" src="https://www.youtube.com/embed/3fnUYVYnqgo" frameborder="0" allowfullscreen></iframe>
+         <?php
+                $con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                // Check connection
+                if (mysqli_connect_errno())
+                {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+                //sort a-z
+                $query = "  SELECT recipe.videolink
+							from recipe
+							where recipe.idrecipe=1";
+                $result = mysqli_query($con,$query);
+
+                //Associative array
+
+                while ($row=mysqli_fetch_assoc($result)){
+                  echo '<iframe width="100%" height="315" src ="'.$row['videolink'].'"  frameborder="0" allowfullscreen></iframe>';
+                 
+                   
+                }
+
+                ?>
+		
 		</div>
 	</div>
 

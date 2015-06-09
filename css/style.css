@@ -361,7 +361,7 @@ ul.food{
     height:30px;
     border-radius: 10px ;
     background-color:#FA9E41;
-    margin-bottom:5px;
+    margin-bottom:15px;
     text-align:center;
     font-size:1em;
     overflow: hidden;
@@ -453,4 +453,19 @@ footer li a {
 .ingredientslist li {
 	padding: 10px;
 	font-size:16px;
+}
+
+
+.feed_video {
+  border-radius: 4px;
+  background-color: #FFDD96;
+  box-sizing: border-box;
+  border: 7px solid white;
+}
+.feed_video h3{
+	color: #ff3608;
+  font-family: 'lato';
+  font-weight: 600;
+  padding:5px;
+  font-size:19px;
 }
