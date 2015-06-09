@@ -495,7 +495,7 @@ ul { list-style-type:none;}
 .white_bg {
 	background-color: white;
 	opacity: 1.929;
-	position: absolute;
+	/*position: absolute; */
 	left: 111px;
 	top: 231px;
 	width: 1037px;
@@ -503,7 +503,7 @@ ul { list-style-type:none;}
 }
 #Rectangle_1 {
 	background-color: rgb(255, 164, 82);
-	position: absolute;
+	/*position: absolute; */
 	left: 120px;
 	top: 265px;
 	width: 958px;
@@ -511,7 +511,7 @@ ul { list-style-type:none;}
 }
 #Rectangle_2 {
 	background-color: rgb(255, 164, 82);
-	position: absolute;
+	/*position: absolute;*/
 	/* left: 120px; */
 	top: 868px;
 	width: 958px;
@@ -526,25 +526,41 @@ ul { list-style-type:none;}
 	height: 459px;
 	margin: 20px 0px 0px 64px;
 }
+<<<<<<< Updated upstream
 
 4h {
+=======
+.videopage p {
+	font-size: 50px;
+	font-family: "Gill Sans";
+	color: rgb(242, 236, 226);
+	line-height: -1;
+	/* text-align: left; */
+  /* top: 673.825px; */
+  /* padding: 0px 50px 6px; */
+	margin: 23px;
+}
+.videopage h4 {
+>>>>>>> Stashed changes
  font-size: 50px;
  font-family: "Gill Sans";
  font-weight: lighter;
  color: rgb(255, 164, 82);
  line-height: 1.2;
 }
-h5 {
+.videopage h5 {
 	font-size: 50px;
-	font-family: "Gill Sans";
-	font-weight: lighter;
-	color: rgb(255, 164, 82);
-	line-height: 1.2;
-	text-align: left;
-	position: absolute;
-	left: 171px;
-	top: 1138.837px;
-	z-index: 117;
+  font-family: "Gill Sans";
+  font-weight: lighter;
+  color: rgb(255, 164, 82);
+  margin: 367px 0px 56px 98px;
+  /* line-height: 13.3; */
+  /* text-align: left; */
+  /* position: absolute; */
+  /* left: 171px; */
+  /* top: 1138.837px; */
+  /* z-index: 117; */
+  display: block;
 }
 
 div.group {
@@ -564,13 +580,11 @@ box {
 }
 <!--- first row of video ---->
 
-img {
- margin:auto;
-}
+
 
 div.rvideo1 {
 	float: left;
-	position: absolute;
+	/*position: absolute; */
 	left: 298px;
 	top: 984px;
 	width: 210px;
@@ -579,7 +593,7 @@ div.rvideo1 {
 }
 div.rvideo2 {
 	float: left;
-	position: absolute;
+	/*position: absolute; */
 	left: 521px;
 	top: 984px;
 	width: 210px;
@@ -587,17 +601,18 @@ div.rvideo2 {
 	z-index: 136;
 }
 div.rvideo3 {
-	float: right;
-	position: absolute;
-	left: 744px;
-	top: 983px;
-	width: 210px;
-	height: 204px;
-	z-index: 137;
+  float: right;
+  /* position: absolute; */
+  /* left: 664px; */
+  /* top: 979px; */
+  width: 343px;
+  height: 204px;
+  display: block;
+  /* z-index: 137; */
 }
 div.rvideo4 {
 	float: left;
-	position: absolute;
+	/*position: absolute; */
 	left: 304px;
 	top: 1300px;
 	width: 210px;
@@ -606,7 +621,7 @@ div.rvideo4 {
 }
 div.rvideo5 {
 	float: left;
-	position: absolute;
+	/*position: absolute; */
 	left: 526px;
 	top: 1300px;
 	width: 210px;
