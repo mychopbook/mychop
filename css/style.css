@@ -257,17 +257,32 @@ h2{
 .feed {
     border-radius: 4px  ;
     background-color: #FFDD96;
-    padding:2px;
-    margin-right:2px;
-    margin-top:2px;
+box-sizing: border-box;
+  border: 1px solid white;
 }
-
+.feed img{
+	padding-top:5px;}
+.feed_new h3{
+	color: #ff3608;
+  font-family: 'lato';
+  font-weight: 600;
+  padding:5px;
+  font-size:19px;
+}
+  .feed_new h2{
+	color: #000;
+  text-decoration: none;
+  font-family: 'lato';
+  font-weight: 200;
+  font-size:19px;
+	}
 .text{
     float:left;
     padding:5px;}
-.user{
-    float:left;
-    padding:5px;
+.user img{
+display: block;
+  padding: 5px;
+	width:30px;
 }
 
 
