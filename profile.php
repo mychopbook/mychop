@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Chop Book</title>
     <!--chop theme-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../../../Users/julissaroa/Desktop/css/style.css">
     <!-- Profile theme -->
-    <link rel="stylesheet" href="css/juli_style.css">
+    <link rel="stylesheet" href="../../../../Users/julissaroa/Desktop/css/juli_style.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- Optional theme -->
@@ -20,14 +20,14 @@
 
 <body>
 
-<?php include('header.php');?>
+<?php include('../../../../Users/julissaroa/Desktop/header.php');?>
 
-
+<div class="container">
 <!-- Left Menu-->
 <div class="col-md-4" id="leftbar">
 
 <div class="rounded">
-<img src="images/usermale.png" alt="profile_icon">
+<img src="../../../../Users/julissaroa/Desktop/images/usermale.png" alt="profile_icon">
 </div>
   
   <h3>  Profile Image </h3>
@@ -38,13 +38,13 @@
 
 
 <!-- Form -->
-<div class="container">
+
 <div class="row">
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="../julissaroa.co/mychopbookfolder/profile.html">Profile</a></li>
-  <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/taste.html">Taste Preference</a></li>
-  <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/history.html">History</a></li>
+  <li role="presentation" class="active"><a href="../../../../Users/julissaroa/julissaroa.co/mychopbookfolder/profile.html">Profile</a></li>
+  <li role="presentation"><a href="../../../../Users/julissaroa/julissaroa.co/mychopbookfolder/taste.html">Taste Preference</a></li>
+  <li role="presentation"><a href="../../../../Users/julissaroa/julissaroa.co/mychopbookfolder/history.html">History</a></li>
 </ul>
 
 
@@ -127,7 +127,7 @@
 
 <!--end content for top and new chops-->
 
-        <?php include('footer.php');?>
+        <?php include('../../../../Users/julissaroa/Desktop/footer.php');?>
 
 
 <!-- Latest compiled and minified JavaScript -->
