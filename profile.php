@@ -39,6 +39,8 @@
 <!-- Form -->
 
 
+<div class="row">
+<div class="col-sm-9">
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="../julissaroa.co/mychopbookfolder/profile.html">Profile</a></li>
   <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/taste.html">Taste Preference</a></li>
@@ -46,10 +48,9 @@
 </ul>
 
 
-
+<div class="row">
+<div class="col-xs-8 col-sm-6">
  <form>
-<div class="col-md-4">
-   
     <p class="personal">
     <h4>Personal Information </h4>
     <ul>
@@ -70,8 +71,9 @@
 </div>
 
     
-<div class="col-md-4">
 
+<div class="row">
+<div class="col-xs-8 col-sm-6">
     <p class="social">
     <ul>
     
@@ -101,6 +103,10 @@
     
 </div>
    </form>
+ 
+ </div>  
+</div>
+
 </div>
 </div>
 
