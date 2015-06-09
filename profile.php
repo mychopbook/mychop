@@ -23,22 +23,21 @@
 <?php include('header.php');?>
 
 
-<div class="row">
 <!-- Left Menu-->
+<div class="row">
 <div class="col-md-4" id="leftbar">
 
 <div class="rounded">
 <img src="images/usermale.png" alt="profile_icon">
 </div>
   
-  <h3>  Profile Image </h3>
- 
-       
-    
+  <h3>  Profile Image </h3> 
+</div>
 </div>
 
 
 <!-- Form -->
+
 
 
 
@@ -50,32 +49,28 @@
 
 
 
-  <div class="col-md-6">
-    <form>
+<div class="row">
+
+ <form>
+<div class="col-md-6">
+   
     <p class="personal">
-    
     <h4>Personal Information </h4>
     <ul>
     <li> Name </br>
-    <input  type="text" name="name" placeholder="You Name" size="40" > 
-    </li>
+    <input  type="text" name="name" placeholder="You Name" size="40" > </li>
     
-    <li>
-    Last Name </br>
-    <input type="text" name="lastname" placeholder="Last Name" size="40">
-    </li> 
+    <li> Last Name </br>
+    <input type="text" name="lastname" placeholder="Last Name" size="40"> </li> 
     
-    <li>
-    Email </br>
-    <input type="text" name="email" placeholder="Email" size="40"> 
-    </li>
+    <li> Email </br>
+    <input type="text" name="email" placeholder="Email" size="40"> </li>
     
-    <li>
-    Password </br>
-    <input type="text" name="password" placeholder="Password" size="40"> 
-    </li>
+    <li> Password </br>
+    <input type="text" name="password" placeholder="Password" size="40"> </li>
     </ul>
     </p>
+    
 </div>
 
     
