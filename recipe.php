@@ -202,10 +202,10 @@ include('header.php');
                         {
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
-                        $query = "  SELECT u.username, rw.comment, rw.datecreate
+                        $query = "  SELECT u.username, rw.comment, rw.datecreated
                         			FROM user as u, review as rw
                         			WHERE u.iduser = rw.user_iduser AND rw.recipe_idrecipe = 1
-                        			ORDER BY rw.datecreate DESC";
+                        			ORDER BY rw.datecreated DESC";
                         $result = mysqli_query($con,$query);
                         //Associative array
 
@@ -213,7 +213,7 @@ include('header.php');
                             echo '<li>' .$row['comment'];
                             echo '<p class="'.'reviewstamp'.'">'.'<b>' .$row['username'].'</b>';
                             echo '<span>'.'  posted '.' ';
-                            echo timeAgoInWords($row["datecreate"]).'</span>'.'</p>';
+                            echo timeAgoInWords($row["datecreated"]).'</span>'.'</p>';
 
                             echo '</li>';
 
