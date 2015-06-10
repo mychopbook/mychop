@@ -27,7 +27,7 @@
             <a href="#link1"><img src="images/social3.png" alt="facebook" height="25px"/></a>
             <a href="#link1"><img src="images/social4.png" alt="instagram" height="25px"/></a>
             </div>
-            <div class="col-xs-12 col-sm-6 toplinks"><a href="login_register.php">Login / Register</a> | <a href="#link1">My Account</a> | <a href="mychops.php1">MyChops</a></div>
+            <div class="col-xs-12 col-sm-6 toplinks"><a href="login_register.php">Login / Register</a> | <a href="#link1">My Account</a> | <a href="mychops.php">MyChops</a></div>
 		</div>
 	</div><!-- end container-->
     </div><!-- end topnavbhbj-->
