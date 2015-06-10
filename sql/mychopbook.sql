@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.5
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:8889
--- Generation Time: Jun 02, 2015 at 07:15 PM
--- Server version: 5.5.38
--- PHP Version: 5.5.14
+-- Host: localhost
+-- Generation Time: Jun 09, 2015 at 09:31 PM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `mychopbook`
 --
+CREATE DATABASE IF NOT EXISTS `mychopbook` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `mychopbook`;
 
 -- --------------------------------------------------------
 
@@ -26,10 +28,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `cuisine`
 --
 
-CREATE TABLE `cuisine` (
-`idcuisine` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `cuisine` (
+  `idcuisine` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `icon` text
+  `icon` text,
+  PRIMARY KEY (`idcuisine`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
@@ -53,10 +56,11 @@ INSERT INTO `cuisine` (`idcuisine`, `name`, `icon`) VALUES
 -- Table structure for table `ingredient`
 --
 
-CREATE TABLE `ingredient` (
-`idingredient` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `ingredient` (
+  `idingredient` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `icon` text
+  `icon` text,
+  PRIMARY KEY (`idingredient`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
@@ -83,10 +87,11 @@ INSERT INTO `ingredient` (`idingredient`, `name`, `icon`) VALUES
 -- Table structure for table `mealtype`
 --
 
-CREATE TABLE `mealtype` (
-`idmealtype` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mealtype` (
+  `idmealtype` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `icon` text
+  `icon` text,
+  PRIMARY KEY (`idmealtype`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
@@ -110,11 +115,14 @@ INSERT INTO `mealtype` (`idmealtype`, `name`, `icon`) VALUES
 -- Table structure for table `mychops`
 --
 
-CREATE TABLE `mychops` (
+CREATE TABLE IF NOT EXISTS `mychops` (
   `recipe_idrecipe` int(11) NOT NULL,
   `user_iduser` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `datecreated` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `datecreated` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`recipe_idrecipe`,`user_iduser`),
+  KEY `fk_recipe_has_user_user3_idx` (`user_iduser`),
+  KEY `fk_recipe_has_user_recipe3_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -122,8 +130,8 @@ CREATE TABLE `mychops` (
 --
 
 INSERT INTO `mychops` (`recipe_idrecipe`, `user_iduser`, `name`, `datecreated`) VALUES
-(1, 1, 'best muffins', '2015-05-18 16:19:53'),
-(1, 2, 'son''s fav muffins', '2015-05-18 16:21:40'),
+(1, 1, 'Best Muffins', '2015-05-18 16:19:53'),
+(1, 2, 'Son''s fav muffins', '2015-05-18 16:21:40'),
 (2, 1, 'simple pancakes', '2015-05-18 16:20:37'),
 (3, 1, 'simple dinner', '2015-05-18 16:20:51'),
 (4, 1, 'easy pie', '2015-05-18 16:21:12'),
@@ -132,6 +140,7 @@ INSERT INTO `mychops` (`recipe_idrecipe`, `user_iduser`, `name`, `datecreated`) 
 (6, 5, 'tasty grilled cheese', '2015-05-18 16:22:48'),
 (7, 6, 'spicy pizza', '2015-05-18 16:23:31'),
 (7, 8, 'pefect pizza', '2015-05-18 16:23:44'),
+(8, 1, 'Quick Dinner', '2015-06-09 19:00:48'),
 (11, 4, 'Faves', '2015-05-26 14:50:11');
 
 -- --------------------------------------------------------
@@ -140,10 +149,11 @@ INSERT INTO `mychops` (`recipe_idrecipe`, `user_iduser`, `name`, `datecreated`) 
 -- Table structure for table `preference`
 --
 
-CREATE TABLE `preference` (
-`idcategory` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `preference` (
+  `idcategory` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `icon` text
+  `icon` text,
+  PRIMARY KEY (`idcategory`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
@@ -167,10 +177,11 @@ INSERT INTO `preference` (`idcategory`, `name`, `icon`) VALUES
 -- Table structure for table `prepmethod`
 --
 
-CREATE TABLE `prepmethod` (
-`idprepmethod` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `prepmethod` (
+  `idprepmethod` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `icon` text
+  `icon` text,
+  PRIMARY KEY (`idprepmethod`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
@@ -195,10 +206,13 @@ INSERT INTO `prepmethod` (`idprepmethod`, `name`, `icon`) VALUES
 -- Table structure for table `rating`
 --
 
-CREATE TABLE `rating` (
+CREATE TABLE IF NOT EXISTS `rating` (
   `recipe_idrecipe` int(11) NOT NULL,
   `user_iduser` int(11) NOT NULL,
-  `ratingnumber` int(11) NOT NULL
+  `ratingnumber` int(11) NOT NULL,
+  PRIMARY KEY (`recipe_idrecipe`,`user_iduser`),
+  KEY `fk_recipe_has_user_user2_idx` (`user_iduser`),
+  KEY `fk_recipe_has_user_recipe2_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -224,8 +238,8 @@ INSERT INTO `rating` (`recipe_idrecipe`, `user_iduser`, `ratingnumber`) VALUES
 -- Table structure for table `recipe`
 --
 
-CREATE TABLE `recipe` (
-`idrecipe` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `recipe` (
+  `idrecipe` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `datecreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `picture` text NOT NULL,
@@ -234,25 +248,28 @@ CREATE TABLE `recipe` (
   `status` varchar(1) NOT NULL,
   `cookingskill` varchar(45) NOT NULL,
   `preptime_hours` int(11) DEFAULT NULL,
-  `preptime_mins` int(11) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+  `preptime_mins` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idrecipe`),
+  KEY `fk_recipe_user_idx` (`user_iduser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `recipe`
 --
 
 INSERT INTO `recipe` (`idrecipe`, `name`, `datecreated`, `picture`, `videolink`, `user_iduser`, `status`, `cookingskill`, `preptime_hours`, `preptime_mins`) VALUES
-(1, 'Blueberry Muffins', '2015-05-18 15:27:57', '', NULL, 1, '0', 'Advanced', 1, 30),
-(2, 'Vanilla Pancakes', '2015-05-18 15:30:34', '', NULL, 2, '1', 'Beginner', 0, 30),
-(3, 'Penne Vodka', '2015-05-18 15:31:24', '', NULL, 3, '1', 'Beginner', 1, 5),
-(4, 'Apple Pie', '2015-05-18 15:31:59', '', NULL, 4, '1', 'Advanced', 3, 10),
-(5, 'Peach Cobbler', '2015-05-18 15:33:12', '', NULL, 5, '0', 'Intermediate', 2, 25),
-(6, 'Grilled Cheese', '2015-05-18 15:45:49', '', NULL, 6, '0', 'Advanced', 1, 0),
-(7, 'Spanish Pizza', '2015-05-18 15:49:51', '', NULL, 7, '1', 'Intermediate', 1, 30),
-(8, 'Cowboy Steak', '2015-05-18 15:50:51', '', NULL, 8, '1', 'Beginner', 0, 25),
-(9, 'Garden Salad', '2015-05-18 15:52:48', '', NULL, 9, '1', 'Advanced', 3, 25),
-(10, 'Shrimp Scampi', '2015-05-18 15:53:14', '', NULL, 10, '1', 'Beginner', 1, 15),
-(11, 'Rice and Beans Cuban style', '2015-05-26 14:23:17', '', NULL, 11, '', '', NULL, NULL);
+(1, 'Blueberry Muffins', '2015-05-18 15:27:57', 'http://lanapant.com/mychopbook/feed/13.jpg', 'https://www.youtube.com/embed/G8OoD11F_6o', 1, '0', 'Advanced', 1, 30),
+(2, 'Vanilla Pancakes', '2015-05-18 15:30:34', 'http://lanapant.com/mychopbook/feed/12.jpg', 'https://www.youtube.com/embed/XyNUv7h2mVQ', 2, '1', 'Beginner', 0, 30),
+(3, 'Penne Vodka', '2015-05-18 15:31:24', 'http://lanapant.com/mychopbook/feed/14.jpg', 'https://www.youtube.com/embed/SRIffPRdq_M', 3, '1', 'Beginner', 1, 5),
+(4, 'Apple Pie', '2015-05-18 15:31:59', 'http://lanapant.com/mychopbook/feed/10.jpg', 'https://www.youtube.com/embed/DEySt9IPtsc', 4, '1', 'Advanced', 3, 10),
+(5, 'Peach Cobbler', '2015-05-18 15:33:12', 'http://lanapant.com/mychopbook/feed/6.jpeg', 'https://www.youtube.com/embed/8aWhzIMNCb8', 5, '0', 'Intermediate', 2, 25),
+(6, 'Shrimp Grilled Cheese', '2015-05-18 15:45:49', 'http://lanapant.com/mychopbook/feed/3.jpeg', 'https://www.youtube.com/embed/9VZc6EpFKRc', 6, '0', 'Advanced', 1, 0),
+(7, 'Spanish Pizza', '2015-05-18 15:49:51', 'http://lanapant.com/mychopbook/feed/1.jpeg', 'https://www.youtube.com/embed/Lyj8wH2iTYg', 7, '1', 'Intermediate', 1, 30),
+(8, 'Cowboy Steak', '2015-05-18 15:50:51', 'http://lanapant.com/mychopbook/feed/11.jpg', 'https://www.youtube.com/embed/oRwg5jronsc', 8, '1', 'Beginner', 0, 25),
+(9, 'Garden Salad', '2015-05-18 15:52:48', 'http://lanapant.com/mychopbook/feed/9.jpg', 'https://www.youtube.com/embed/QyM2N1b1xcI', 9, '1', 'Advanced', 3, 25),
+(10, 'Shrimp Scampi', '2015-05-18 15:53:14', 'http://lanapant.com/mychopbook/feed/5.jpeg', 'https://www.youtube.com/embed/NLzqkhpniro', 10, '1', 'Beginner', 1, 15),
+(11, 'Rice and Beans Cuban style', '2015-05-26 14:23:17', 'http://lanapant.com/mychopbook/feed/8.jpeg', 'https://www.youtube.com/embed/T06oh88VhiE', 11, '', '', NULL, NULL),
+(12, 'Hummus', '2015-06-09 18:02:19', 'http://lanapant.com/mychopbook/feed/15.jpg', 'https://www.youtube.com/embed/J3wZ7wYPVTI', 1, '1', 'Beginner', 2, 26);
 
 -- --------------------------------------------------------
 
@@ -260,9 +277,12 @@ INSERT INTO `recipe` (`idrecipe`, `name`, `datecreated`, `picture`, `videolink`,
 -- Table structure for table `recipe_has_cuisine`
 --
 
-CREATE TABLE `recipe_has_cuisine` (
+CREATE TABLE IF NOT EXISTS `recipe_has_cuisine` (
   `recipe_idrecipe` int(11) NOT NULL,
-  `cuisine_idcuisine` int(11) NOT NULL
+  `cuisine_idcuisine` int(11) NOT NULL,
+  PRIMARY KEY (`recipe_idrecipe`,`cuisine_idcuisine`),
+  KEY `fk_recipe_has_cuisine_cuisine1_idx` (`cuisine_idcuisine`),
+  KEY `fk_recipe_has_cuisine_recipe1_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -288,11 +308,14 @@ INSERT INTO `recipe_has_cuisine` (`recipe_idrecipe`, `cuisine_idcuisine`) VALUES
 -- Table structure for table `recipe_has_ingredient`
 --
 
-CREATE TABLE `recipe_has_ingredient` (
+CREATE TABLE IF NOT EXISTS `recipe_has_ingredient` (
   `recipe_idrecipe` int(11) NOT NULL,
   `ingredient_idingredient` int(11) NOT NULL,
   `ingredient_amount` decimal(6,2) DEFAULT NULL,
-  `ingredient_unit` varchar(45) DEFAULT NULL
+  `ingredient_unit` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`recipe_idrecipe`,`ingredient_idingredient`),
+  KEY `fk_recipe_has_ingredient_ingredient1_idx` (`ingredient_idingredient`),
+  KEY `fk_recipe_has_ingredient_recipe1_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -300,18 +323,18 @@ CREATE TABLE `recipe_has_ingredient` (
 --
 
 INSERT INTO `recipe_has_ingredient` (`recipe_idrecipe`, `ingredient_idingredient`, `ingredient_amount`, `ingredient_unit`) VALUES
-(1, 1, 2.00, 'lbs'),
-(1, 2, 0.50, 'lbs'),
-(1, 3, 6.00, NULL),
-(1, 5, 2.00, 'cup(s)'),
-(1, 6, 2.00, 'tspn'),
-(9, 3, 1.00, NULL),
-(9, 7, 3.00, NULL),
-(9, 8, 2.00, 'cup(s)'),
-(9, 9, 2.00, NULL),
-(9, 10, 1.00, 'cup(s)'),
-(11, 11, 1.00, 'cup'),
-(11, 12, 2.00, 'cups');
+(1, 1, '2.00', 'lbs'),
+(1, 2, '0.50', 'lbs'),
+(1, 3, '6.00', 'units'),
+(1, 5, '2.00', 'cup(s)'),
+(1, 6, '2.00', 'tspn'),
+(9, 3, '1.00', NULL),
+(9, 7, '3.00', NULL),
+(9, 8, '2.00', 'cup(s)'),
+(9, 9, '2.00', NULL),
+(9, 10, '1.00', 'cup(s)'),
+(11, 11, '1.00', 'cup'),
+(11, 12, '2.00', 'cups');
 
 -- --------------------------------------------------------
 
@@ -319,9 +342,12 @@ INSERT INTO `recipe_has_ingredient` (`recipe_idrecipe`, `ingredient_idingredient
 -- Table structure for table `recipe_has_mealtype`
 --
 
-CREATE TABLE `recipe_has_mealtype` (
+CREATE TABLE IF NOT EXISTS `recipe_has_mealtype` (
   `recipe_idrecipe` int(11) NOT NULL,
-  `mealtype_idmealtype` int(11) NOT NULL
+  `mealtype_idmealtype` int(11) NOT NULL,
+  PRIMARY KEY (`recipe_idrecipe`,`mealtype_idmealtype`),
+  KEY `fk_recipe_has_mealtype_mealtype1_idx` (`mealtype_idmealtype`),
+  KEY `fk_recipe_has_mealtype_recipe1_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -351,9 +377,12 @@ INSERT INTO `recipe_has_mealtype` (`recipe_idrecipe`, `mealtype_idmealtype`) VAL
 -- Table structure for table `recipe_has_preference`
 --
 
-CREATE TABLE `recipe_has_preference` (
+CREATE TABLE IF NOT EXISTS `recipe_has_preference` (
   `recipe_idrecipe` int(11) NOT NULL,
-  `preference_idcategory` int(11) NOT NULL
+  `preference_idcategory` int(11) NOT NULL,
+  PRIMARY KEY (`recipe_idrecipe`,`preference_idcategory`),
+  KEY `fk_recipe_has_preference_preference1_idx` (`preference_idcategory`),
+  KEY `fk_recipe_has_preference_recipe1_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -384,9 +413,12 @@ INSERT INTO `recipe_has_preference` (`recipe_idrecipe`, `preference_idcategory`)
 -- Table structure for table `recipe_has_prepmethod`
 --
 
-CREATE TABLE `recipe_has_prepmethod` (
+CREATE TABLE IF NOT EXISTS `recipe_has_prepmethod` (
   `recipe_idrecipe` int(11) NOT NULL,
-  `prepmethod_idprepmethod` int(11) NOT NULL
+  `prepmethod_idprepmethod` int(11) NOT NULL,
+  PRIMARY KEY (`recipe_idrecipe`,`prepmethod_idprepmethod`),
+  KEY `fk_recipe_has_prepmethod_prepmethod1_idx` (`prepmethod_idprepmethod`),
+  KEY `fk_recipe_has_prepmethod_recipe1_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -411,11 +443,14 @@ INSERT INTO `recipe_has_prepmethod` (`recipe_idrecipe`, `prepmethod_idprepmethod
 -- Table structure for table `review`
 --
 
-CREATE TABLE `review` (
+CREATE TABLE IF NOT EXISTS `review` (
   `recipe_idrecipe` int(11) NOT NULL,
   `user_iduser` int(11) NOT NULL,
   `comment` text NOT NULL,
-  `datecreated` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `datecreated` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`recipe_idrecipe`,`user_iduser`),
+  KEY `fk_recipe_has_user_user1_idx` (`user_iduser`),
+  KEY `fk_recipe_has_user_recipe1_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -441,10 +476,12 @@ INSERT INTO `review` (`recipe_idrecipe`, `user_iduser`, `comment`, `datecreated`
 -- Table structure for table `shoppinglist`
 --
 
-CREATE TABLE `shoppinglist` (
-`idshoppinglist` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `shoppinglist` (
+  `idshoppinglist` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `user_iduser` int(11) NOT NULL
+  `user_iduser` int(11) NOT NULL,
+  PRIMARY KEY (`idshoppinglist`),
+  KEY `fk_shoppinglist_user1_idx` (`user_iduser`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
@@ -470,9 +507,12 @@ INSERT INTO `shoppinglist` (`idshoppinglist`, `name`, `user_iduser`) VALUES
 -- Table structure for table `shoppinglist_has_ingredient`
 --
 
-CREATE TABLE `shoppinglist_has_ingredient` (
+CREATE TABLE IF NOT EXISTS `shoppinglist_has_ingredient` (
   `shoppinglist_idshoppinglist` int(11) NOT NULL,
-  `ingredient_idingredient` int(11) NOT NULL
+  `ingredient_idingredient` int(11) NOT NULL,
+  PRIMARY KEY (`shoppinglist_idshoppinglist`,`ingredient_idingredient`),
+  KEY `fk_shoppinglist_has_ingredient_ingredient1_idx` (`ingredient_idingredient`),
+  KEY `fk_shoppinglist_has_ingredient_shoppinglist1_idx` (`shoppinglist_idshoppinglist`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -511,12 +551,14 @@ INSERT INTO `shoppinglist_has_ingredient` (`shoppinglist_idshoppinglist`, `ingre
 -- Table structure for table `steps`
 --
 
-CREATE TABLE `steps` (
-`idsteps` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `steps` (
+  `idsteps` int(11) NOT NULL AUTO_INCREMENT,
   `direction` text NOT NULL,
   `picture` text NOT NULL,
   `recipe_idrecipe` int(11) NOT NULL,
-  `stepnumber` int(11) NOT NULL
+  `stepnumber` int(11) NOT NULL,
+  PRIMARY KEY (`idsteps`),
+  KEY `fk_steps_recipe1_idx` (`recipe_idrecipe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
@@ -544,13 +586,14 @@ INSERT INTO `steps` (`idsteps`, `direction`, `picture`, `recipe_idrecipe`, `step
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
-`iduser` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `iduser` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(45) NOT NULL,
   `email` varchar(268) NOT NULL,
   `username` varchar(45) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `lastname` varchar(45) NOT NULL
+  `lastname` varchar(45) NOT NULL,
+  PRIMARY KEY (`iduser`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
@@ -568,169 +611,8 @@ INSERT INTO `user` (`iduser`, `password`, `email`, `username`, `name`, `lastname
 (8, 'password', 'hillary@gmail.com', 'hillary', 'hillary', 'clinton'),
 (9, 'password', 'bush@gmail.com', 'gbush', 'george ', 'bush'),
 (10, 'password', 'kennedy@gmail.com', 'kennedy', 'john', 'kennedy'),
-(11, 'topsecret', '', '', 'Rene', 'Alvarez');
+(11, 'topsecret', '', 'ReneAlvar', 'Rene', 'Alvarez');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cuisine`
---
-ALTER TABLE `cuisine`
- ADD PRIMARY KEY (`idcuisine`);
-
---
--- Indexes for table `ingredient`
---
-ALTER TABLE `ingredient`
- ADD PRIMARY KEY (`idingredient`);
-
---
--- Indexes for table `mealtype`
---
-ALTER TABLE `mealtype`
- ADD PRIMARY KEY (`idmealtype`);
-
---
--- Indexes for table `mychops`
---
-ALTER TABLE `mychops`
- ADD PRIMARY KEY (`recipe_idrecipe`,`user_iduser`), ADD KEY `fk_recipe_has_user_user3_idx` (`user_iduser`), ADD KEY `fk_recipe_has_user_recipe3_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `preference`
---
-ALTER TABLE `preference`
- ADD PRIMARY KEY (`idcategory`);
-
---
--- Indexes for table `prepmethod`
---
-ALTER TABLE `prepmethod`
- ADD PRIMARY KEY (`idprepmethod`);
-
---
--- Indexes for table `rating`
---
-ALTER TABLE `rating`
- ADD PRIMARY KEY (`recipe_idrecipe`,`user_iduser`), ADD KEY `fk_recipe_has_user_user2_idx` (`user_iduser`), ADD KEY `fk_recipe_has_user_recipe2_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `recipe`
---
-ALTER TABLE `recipe`
- ADD PRIMARY KEY (`idrecipe`), ADD KEY `fk_recipe_user_idx` (`user_iduser`);
-
---
--- Indexes for table `recipe_has_cuisine`
---
-ALTER TABLE `recipe_has_cuisine`
- ADD PRIMARY KEY (`recipe_idrecipe`,`cuisine_idcuisine`), ADD KEY `fk_recipe_has_cuisine_cuisine1_idx` (`cuisine_idcuisine`), ADD KEY `fk_recipe_has_cuisine_recipe1_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `recipe_has_ingredient`
---
-ALTER TABLE `recipe_has_ingredient`
- ADD PRIMARY KEY (`recipe_idrecipe`,`ingredient_idingredient`), ADD KEY `fk_recipe_has_ingredient_ingredient1_idx` (`ingredient_idingredient`), ADD KEY `fk_recipe_has_ingredient_recipe1_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `recipe_has_mealtype`
---
-ALTER TABLE `recipe_has_mealtype`
- ADD PRIMARY KEY (`recipe_idrecipe`,`mealtype_idmealtype`), ADD KEY `fk_recipe_has_mealtype_mealtype1_idx` (`mealtype_idmealtype`), ADD KEY `fk_recipe_has_mealtype_recipe1_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `recipe_has_preference`
---
-ALTER TABLE `recipe_has_preference`
- ADD PRIMARY KEY (`recipe_idrecipe`,`preference_idcategory`), ADD KEY `fk_recipe_has_preference_preference1_idx` (`preference_idcategory`), ADD KEY `fk_recipe_has_preference_recipe1_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `recipe_has_prepmethod`
---
-ALTER TABLE `recipe_has_prepmethod`
- ADD PRIMARY KEY (`recipe_idrecipe`,`prepmethod_idprepmethod`), ADD KEY `fk_recipe_has_prepmethod_prepmethod1_idx` (`prepmethod_idprepmethod`), ADD KEY `fk_recipe_has_prepmethod_recipe1_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `review`
---
-ALTER TABLE `review`
- ADD PRIMARY KEY (`recipe_idrecipe`,`user_iduser`), ADD KEY `fk_recipe_has_user_user1_idx` (`user_iduser`), ADD KEY `fk_recipe_has_user_recipe1_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `shoppinglist`
---
-ALTER TABLE `shoppinglist`
- ADD PRIMARY KEY (`idshoppinglist`), ADD KEY `fk_shoppinglist_user1_idx` (`user_iduser`);
-
---
--- Indexes for table `shoppinglist_has_ingredient`
---
-ALTER TABLE `shoppinglist_has_ingredient`
- ADD PRIMARY KEY (`shoppinglist_idshoppinglist`,`ingredient_idingredient`), ADD KEY `fk_shoppinglist_has_ingredient_ingredient1_idx` (`ingredient_idingredient`), ADD KEY `fk_shoppinglist_has_ingredient_shoppinglist1_idx` (`shoppinglist_idshoppinglist`);
-
---
--- Indexes for table `steps`
---
-ALTER TABLE `steps`
- ADD PRIMARY KEY (`idsteps`), ADD KEY `fk_steps_recipe1_idx` (`recipe_idrecipe`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
- ADD PRIMARY KEY (`iduser`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cuisine`
---
-ALTER TABLE `cuisine`
-MODIFY `idcuisine` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `ingredient`
---
-ALTER TABLE `ingredient`
-MODIFY `idingredient` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `mealtype`
---
-ALTER TABLE `mealtype`
-MODIFY `idmealtype` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `preference`
---
-ALTER TABLE `preference`
-MODIFY `idcategory` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `prepmethod`
---
-ALTER TABLE `prepmethod`
-MODIFY `idprepmethod` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `recipe`
---
-ALTER TABLE `recipe`
-MODIFY `idrecipe` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT for table `shoppinglist`
---
-ALTER TABLE `shoppinglist`
-MODIFY `idshoppinglist` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT for table `steps`
---
-ALTER TABLE `steps`
-MODIFY `idsteps` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
@@ -739,82 +621,82 @@ MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 -- Constraints for table `mychops`
 --
 ALTER TABLE `mychops`
-ADD CONSTRAINT `fk_recipe_has_user_recipe3` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_user_user3` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_user_recipe3` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_user_user3` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `rating`
 --
 ALTER TABLE `rating`
-ADD CONSTRAINT `fk_recipe_has_user_recipe2` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_user_user2` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_user_recipe2` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_user_user2` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `recipe`
 --
 ALTER TABLE `recipe`
-ADD CONSTRAINT `fk_recipe_user` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_user` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `recipe_has_cuisine`
 --
 ALTER TABLE `recipe_has_cuisine`
-ADD CONSTRAINT `fk_recipe_has_cuisine_cuisine1` FOREIGN KEY (`cuisine_idcuisine`) REFERENCES `cuisine` (`idcuisine`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_cuisine_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_cuisine_cuisine1` FOREIGN KEY (`cuisine_idcuisine`) REFERENCES `cuisine` (`idcuisine`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_cuisine_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `recipe_has_ingredient`
 --
 ALTER TABLE `recipe_has_ingredient`
-ADD CONSTRAINT `fk_recipe_has_ingredient_ingredient1` FOREIGN KEY (`ingredient_idingredient`) REFERENCES `ingredient` (`idingredient`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_ingredient_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_ingredient_ingredient1` FOREIGN KEY (`ingredient_idingredient`) REFERENCES `ingredient` (`idingredient`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_ingredient_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `recipe_has_mealtype`
 --
 ALTER TABLE `recipe_has_mealtype`
-ADD CONSTRAINT `fk_recipe_has_mealtype_mealtype1` FOREIGN KEY (`mealtype_idmealtype`) REFERENCES `mealtype` (`idmealtype`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_mealtype_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_mealtype_mealtype1` FOREIGN KEY (`mealtype_idmealtype`) REFERENCES `mealtype` (`idmealtype`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_mealtype_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `recipe_has_preference`
 --
 ALTER TABLE `recipe_has_preference`
-ADD CONSTRAINT `fk_recipe_has_preference_preference1` FOREIGN KEY (`preference_idcategory`) REFERENCES `preference` (`idcategory`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_preference_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_preference_preference1` FOREIGN KEY (`preference_idcategory`) REFERENCES `preference` (`idcategory`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_preference_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `recipe_has_prepmethod`
 --
 ALTER TABLE `recipe_has_prepmethod`
-ADD CONSTRAINT `fk_recipe_has_prepmethod_prepmethod1` FOREIGN KEY (`prepmethod_idprepmethod`) REFERENCES `prepmethod` (`idprepmethod`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_prepmethod_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_prepmethod_prepmethod1` FOREIGN KEY (`prepmethod_idprepmethod`) REFERENCES `prepmethod` (`idprepmethod`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_prepmethod_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `review`
 --
 ALTER TABLE `review`
-ADD CONSTRAINT `fk_recipe_has_user_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_recipe_has_user_user1` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_recipe_has_user_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_recipe_has_user_user1` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `shoppinglist`
 --
 ALTER TABLE `shoppinglist`
-ADD CONSTRAINT `fk_shoppinglist_user1` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_shoppinglist_user1` FOREIGN KEY (`user_iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `shoppinglist_has_ingredient`
 --
 ALTER TABLE `shoppinglist_has_ingredient`
-ADD CONSTRAINT `fk_shoppinglist_has_ingredient_ingredient1` FOREIGN KEY (`ingredient_idingredient`) REFERENCES `ingredient` (`idingredient`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_shoppinglist_has_ingredient_shoppinglist1` FOREIGN KEY (`shoppinglist_idshoppinglist`) REFERENCES `shoppinglist` (`idshoppinglist`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_shoppinglist_has_ingredient_ingredient1` FOREIGN KEY (`ingredient_idingredient`) REFERENCES `ingredient` (`idingredient`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_shoppinglist_has_ingredient_shoppinglist1` FOREIGN KEY (`shoppinglist_idshoppinglist`) REFERENCES `shoppinglist` (`idshoppinglist`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `steps`
 --
 ALTER TABLE `steps`
-ADD CONSTRAINT `fk_steps_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_steps_recipe1` FOREIGN KEY (`recipe_idrecipe`) REFERENCES `recipe` (`idrecipe`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
