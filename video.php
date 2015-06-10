@@ -31,7 +31,8 @@ include('header_log.php');
                 }
                 //sort a-z
                 $query = "  SELECT recipe.videolink, recipe.name
-							from recipe ";
+							from recipe 
+							ORDER BY recipe.datecreated DESC";
                 $result = mysqli_query($con,$query);
 
                 //Associative array
