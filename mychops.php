@@ -29,12 +29,11 @@ include('header_log.php');
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
                 //sort a-z
-                $query = "  SELECT r.picture, m.name, rat.ratingnumber
+                $query = "  SELECT DISTINCT r.picture, m.name
 							FROM recipe r, mychops m, rating rat, user u
 							WHERE m.recipe_idrecipe = r.idrecipe
-							AND m.user_iduser = u.iduser
-							AND r.idrecipe = rat.recipe_idrecipe
-							AND u.iduser=1";
+							AND m.user_iduser = 1
+							AND r.idrecipe = rat.recipe_idrecipe";
                 $result = mysqli_query($con,$query);
 
                 //Associative array
