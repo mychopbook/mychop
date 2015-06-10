@@ -23,7 +23,7 @@ include('header.php');
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
                 //sort a-z
-                $query = "  SELECT r.name, u.username, rt.ratingnumber,AVG(rt.ratingnumber) as average
+                $query = "  SELECT r.name, u.username, rt.ratingnumber,LEFT(AVG(rt.ratingnumber),3) as average
                             FROM recipe r, user u, rating rt
                             WHERE r.user_iduser = u.iduser
                             AND r.idrecipe = rt.recipe_idrecipe
