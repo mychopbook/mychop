@@ -23,7 +23,7 @@ include('header.php');
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
                 //sort a-z
-                $query = "  SELECT r.name, u.username, rt.ratingnumber
+                $query = "  SELECT r.name, u.username, rt.ratingnumber,AVG(rt.ratingnumber) as average
                             FROM recipe r, user u, rating rt
                             WHERE r.user_iduser = u.iduser
                             AND r.idrecipe = rt.recipe_idrecipe
@@ -38,7 +38,7 @@ include('header.php');
                     echo '<span>'.$row['username'].'</span>';
                     echo '</div>';
                     echo '<div class="col-xs-12 col-md-1">';
-		        	echo '<h3>Rating:</h3>';
+		        	echo '<h3>Rating: '.$row['average'].'</h3>';
 					echo '</div>';
 					echo '<div class="col-xs-12 col-md-2">';
 					echo '<img src="images/rating' .$row['ratingnumber'] . '.png" alt="rating"/>';
@@ -202,10 +202,11 @@ include('header.php');
                         {
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
-                        $query = "  SELECT u.username, rw.comment, rw.datecreate
+                        $query = "  SELECT u.username, rw.comment, rw.datecreated
                         			FROM user as u, review as rw
                         			WHERE u.iduser = rw.user_iduser AND rw.recipe_idrecipe = 1
-                        			ORDER BY rw.datecreate DESC";
+									
+                        			ORDER BY rw.datecreated DESC";
                         $result = mysqli_query($con,$query);
                         //Associative array
 
@@ -222,13 +223,7 @@ include('header.php');
                         ?>
                      </ul>
 
-			<!--<ul>
-				<li>This is absolutely my favorite fruit salad. My guests love it, too!<br>-Angela</li>
-				<li>This is absolutely the best fruit salad I have ever served. Besides being a beautiful presentation, the flavors were beyond compare to any fruit salad I have had. I have omitted and added a few ingredients here and there - still the best!!!!<br>-Laura</li>
-				<li>I made this for a family barbecue last weekend and boy was it good! I used orange juice instead of the orange liquor because kids were eating it. I also used fruit that my grocery store had so I added extra strawberries instead of raspberries. Very refreshing and lite tasting.<br>-Jaqueline</li>
-				<li>I've made this for 3 different occasions and everyone has absolutely loved it - even when the guests prefer cakes for dessert!<br>-Charity</li>
-				<li>I have made this salad multiple tme and it is always a hit.<br>-Jennifer</li>
-			</ul>-->
+			
 		</div>
 		<div class="col-xs-12 col-md-6">
 		<h3>Video:</h3>
