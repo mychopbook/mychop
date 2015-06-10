@@ -31,10 +31,16 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
                 //sort a-z
-                $query = "  SELECT r.name, u.username,r.picture
-                            FROM recipe r, user u
+                $query = " SELECT r.name, u.username,r.picture, (SELECT LEFT(AVG(rt.ratingnumber),3)  FROM rating rt WHERE rt.recipe_idrecipe = r.idrecipe) AS average
+
+                            FROM recipe r, user u 
+
                             WHERE r.user_iduser = u.iduser
+
+                           
+
                             ORDER BY r.datecreated DESC
+
                             LIMIT 0,3";
                 $result = mysqli_query($con,$query);
 
@@ -45,12 +51,14 @@
                     echo '<img src="'.$row['picture'].'" alt="top chop" class="img-circle img-responsive">';
                     echo '<h3>' .$row['name'] .'</h3>';
                     echo '<p class="rating"></p>';
+					  echo '<p>'.$row['average'].'</p>';
                     echo '<a>'.$row['username'].'</a>';
+					 
                     echo '</div>';
                 }
 
                 ?>
-          
+
             </div>
         </div><!--end container-->
 
