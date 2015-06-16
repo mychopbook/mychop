@@ -39,7 +39,7 @@
                             <ul class="nav nav-tabs">
                               <li role="presentation"><a href="profile.php">Profile</a></li>
                               <li role="presentation" class="active"><a href="taste.php">Taste Preference</a></li>
-                              <li role="presentation"><a href="../julissaroa.co/mychopbookfolder/history.html">History</a></li>
+                              <li role="presentation"><a href="history.php">History</a></li>
                             </ul>
                          </div>
                     </div>
