@@ -6,7 +6,7 @@
                 <div class="container_fluid hero-content">
                     <form action="search.php">
                         <input type="text" class="form-control herosearchinput" placeholder="Search..."><input type="submit" value="Search" class="btn herosearchbtn btn-orange">
-                        <button class="btn  btn-create" type="submit">Create Recipe</button>
+                        <a href="recipeupload.php" class="btn  btn-create">Create Recipe</a>
                     </form>
                 </div>
 
