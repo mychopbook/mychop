@@ -31,6 +31,27 @@
         </div>
           
           <h3>  Profile Image </h3> 
+          <?php
+		  
+		  
+		  		$con = mysqli_connect("localhost","mychopbook","mychopbook","mychopbook");
+
+                        // Check connection
+                        if (mysqli_connect_errno())
+                        {
+                            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                        }
+		  		$query = " SELECT `email`, `username`, `name`, `lastname`
+						   FROM `user` 
+						   WHERE `iduser` = 1" ;
+						   
+				$result = mysqli_query($con,$query);
+                        //Associative array
+		   
+
+		  
+		  ?>
+          
         </div>
         
     <div class="col-md-8">
