@@ -14,37 +14,65 @@ include('header.php');
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12">
-			<h3 class="center-text">Upload Your Recipe</h3>
-		</div>
 		<form>
-			<div class="col-xs-12 col-md-6">
-				<ul>
-				<li><input placeholder="Recipe Name"></li>
-				<li><input placeholder="Cuisine"></li>
-				<li><input placeholder="Prep Time"></li>
-				<li><input placeholder="Cooking Skill"></li>
-				<li><input placeholder="Preferences"></li>
-				<li><input placeholder="Meal Type"></li>
-				<li><input placeholder="Prep Method"></li>
-				<li><input placeholder="Prep Time"></li>
-				<li><input placeholder="Main Picture"></li>
-				<li><input placeholder="Youtube Video URL"></li>
-				</ul>
+			<div class="col-xs-12">
+				<h3 class="center-text">Upload Your Recipe</h3>
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<input placeholder="Ingredients">
-				<input placeholder="Directions">
+				<div class="form-group">
+	             <label for="recipename">Recipe Name</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Cuisine</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Cooking Skill</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Preferences</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Meal Type</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Prep Method</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Prep Time</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Main Picture</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+	            <div class="form-group">
+	             <label for="recipename">Youtube Video URL</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	            </div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="form-group">
+	             <label for="recipename">Ingredients</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" placeholder="tomato,beef,chicken">
+	            </div>
+				<div class="form-group">
+	             <label for="recipename">Directions</label>
+	             <input type="text" class="form-control" id="examplejordan1utName2" >
+	             <input type="file" name="pic" accept="image/*">
+	             <a href="#link">+ Add another step</a>
+	            </div>
+			</div>
+			<div class="col-xs-12">
+				<input type="submit" value="Save as Draft">
+				<input type="submit" value="Publish">
 			</div>
 		</form>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 col-md-6">
-				<input type="submit" value="Save as Draft">
-		</div>
-		<div class="col-xs-12 col-md-6">
-				<input type="submit" value="Publish">
-		</div>
 	</div>
 </div>
 
